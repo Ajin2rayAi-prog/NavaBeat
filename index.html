@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NavaBeat — رزرو بلیط کنسرت | قدم ۱</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#07070c; --panel:#101018; --line:#ffffff14;
+    --gold:#f5c86e; --violet:#8b7bff; --cyan:#5eead4; --red:#ff5470; --green:#4ade80;
+    --txt:#f4f1ea; --mut:#a7a3b8;
+  }
+  body{background:var(--bg);color:var(--txt);font-family:Tahoma,Vazirmatn,sans-serif;overflow-x:hidden}
+  /* ---- cinematic hero ---- */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;
+    background:radial-gradient(1000px 500px at 50% -10%, #8b7bff33, transparent),
+               radial-gradient(800px 400px at 80% 110%, #ff547022, transparent),
+               radial-gradient(700px 500px at 10% 100%, #5eead411, transparent), #07070c;}
+  .hero::after{content:"";position:absolute;inset:0;background:url('');opacity:.06;pointer-events:none;
+    background-image:radial-gradient(#fff 1px, transparent 1px);background-size:3px 3px;}
+  .spot{position:absolute;width:520px;height:520px;border-radius:50%;filter:blur(120px);opacity:.5;pointer-events:none}
+  .s1{background:#8b7bff;top:-160px;right:10%}.s2{background:#ff5470;bottom:-200px;left:5%;opacity:.3}
+  .beam{position:absolute;top:-10%;left:50%;width:340px;height:120%;transform:translateX(-50%) perspective(600px) rotateX(25deg);
+    background:linear-gradient(to bottom, #f5c86e55, transparent 70%);clip-path:polygon(35% 0,65% 0,100% 100%,0 100%);filter:blur(6px);pointer-events:none;animation:sway 6s ease-in-out infinite alternate}
+  @keyframes sway{from{transform:translateX(-56%) perspective(600px) rotateX(25deg) rotate(-3deg)}to{transform:translateX(-44%) perspective(600px) rotateX(25deg) rotate(3deg)}}
+  .hero-inner{position:relative;z-index:2;max-width:900px;padding:40px 20px}
+  .badge{display:inline-block;border:1px solid var(--line);border-radius:100px;padding:8px 18px;font-size:13px;color:var(--mut);background:#ffffff08;backdrop-filter:blur(10px)}
+  .badge b{color:var(--gold)}
+  h1{font-size:clamp(42px,8vw,96px);line-height:1.05;margin:22px 0;font-weight:900;letter-spacing:-1px}
+  h1 .en{display:block;font-size:clamp(20px,3vw,34px);letter-spacing:8px;color:var(--gold);font-weight:400;margin-bottom:8px}
+  h1 .neon{background:linear-gradient(90deg,#f5c86e,#ff5470,#8b7bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--mut);font-size:clamp(14px,2vw,18px);line-height:2}
+  .cta-row{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{border:none;cursor:pointer;border-radius:14px;padding:15px 32px;font-size:16px;font-family:inherit;font-weight:700;transition:.25s}
+  .btn-gold{background:linear-gradient(135deg,#f5c86e,#ff9d5c);color:#1a1206;box-shadow:0 10px 40px #f5c86e44}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 50px #f5c86e66}
+  .btn-glass{background:#ffffff10;color:#fff;border:1px solid var(--line);backdrop-filter:blur(12px)}
+  .btn-glass:hover{background:#ffffff1c}
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);white-space:nowrap;overflow:hidden;padding:14px 0;color:var(--mut);font-size:14px;background:#0a0a12}
+  .marquee span{display:inline-block;padding-left:40px;animation:mq 22s linear infinite}
+  @keyframes mq{to{transform:translateX(50%)}}
+  /* ---- venue ---- */
+  .wrap{max-width:1200px;margin:0 auto;padding:60px 20px}
+  .sec-title{font-size:clamp(24px,4vw,40px);font-weight:900;margin-bottom:8px}
+  .sec-title small{color:var(--gold);font-size:15px;display:block;font-weight:400;margin-bottom:8px;letter-spacing:2px}
+  .sec-desc{color:var(--mut);line-height:2;margin-bottom:26px}
+  .layout{display:grid;grid-template-columns:1.6fr .9fr;gap:20px}
+  @media(max-width:900px){.layout{grid-template-columns:1fr}}
+  .stage-box{background:linear-gradient(180deg,#14141f,#0b0b12);border:1px solid var(--line);border-radius:24px;padding:26px;position:relative;overflow:hidden}
+  .tilt-bar{display:flex;gap:10px;align-items:center;margin-bottom:14px;color:var(--mut);font-size:13px;flex-wrap:wrap}
+  .tilt-bar input{accent-color:var(--gold)}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--mut);margin-bottom:14px}
+  .dot{width:12px;height:12px;border-radius:4px;display:inline-block;margin-left:6px;vertical-align:middle}
+  /* 3D hall */
+  .hall{perspective:1200px;display:flex;justify-content:center;padding:10px 0 30px}
+  .hall-inner{transform:rotateX(38deg);transform-style:preserve-3d;transition:transform .3s;background:radial-gradient(ellipse at 50% 0%, #1c1c2e, #0a0a12 70%);border:1px solid var(--line);border-radius:20px;padding:26px 18px;width:100%;max-width:640px;box-shadow:0 40px 100px #000000aa}
+  .stage{height:74px;border-radius:14px;background:linear-gradient(90deg,#f5c86e,#ff5470,#8b7bff,#5eead4);position:relative;display:flex;align-items:center;justify-content:center;font-weight:900;color:#000;letter-spacing:1px;box-shadow:0 0 60px #f5c86e55;transform:translateZ(40px)}
+  .stage::after{content:"🎤 خواننده اینجاست";position:absolute;bottom:-24px;font-size:12px;color:var(--gold);font-weight:400}
+  .singer{position:absolute;top:50%;left:50%;width:22px;height:22px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 20px #fff,0 0 50px var(--gold);animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{box-shadow:0 0 8px #fff,0 0 25px var(--gold)}}
+  .row3d{display:flex;justify-content:center;gap:8px;margin-top:34px}
+  .sec{flex:1;text-align:center}
+  .sec-name{font-size:12px;color:var(--mut);margin-bottom:8px}
+  .seats{display:grid;gap:6px;justify-content:center}
+  .seat{width:30px;height:30px;border-radius:8px 8px 3px 3px;border:1px solid #ffffff22;cursor:pointer;font-size:10px;display:flex;align-items:center;justify-content:center;color:#ffffff88;transition:.18s;background:#2a2a3a;transform:translateZ(0)}
+  .seat:hover{transform:translateZ(18px) scale(1.15);border-color:#fff}
+  .seat.vip{background:linear-gradient(135deg,#f5c86e,#c98a1e);color:#000;border-color:#f5c86e}
+  .seat.gold{background:#3b3252;border-color:#8b7bff66}
+  .seat.silver{background:#22303a;border-color:#5eead455}
+  .seat.balc{background:#2c2340;border-color:#ff547055}
+  .seat.sold{background:#15151d;color:#444;border-color:#222;cursor:not-allowed;text-decoration:line-through}
+  .seat.selected{outline:3px solid #fff;transform:translateZ(26px) scale(1.2);box-shadow:0 0 25px var(--gold)}
+  /* info panel */
+  .panel{background:linear-gradient(180deg,#ffffff0d,#ffffff03);border:1px solid var(--line);border-radius:24px;padding:28px;backdrop-filter:blur(16px);position:sticky;top:20px}
+  .panel h3{font-size:20px;margin-bottom:4px}
+  .panel .en-lbl{font-size:11px;letter-spacing:3px;color:var(--mut)}
+  .big-dist{font-size:52px;font-weight:900;color:var(--gold);line-height:1;margin:14px 0 2px}
+  .meter{height:10px;background:#ffffff12;border-radius:100px;overflow:hidden;margin:12px 0 20px}
+  .meter i{display:block;height:100%;width:10%;border-radius:100px;background:linear-gradient(90deg,var(--green),var(--gold),var(--red));transition:width .4s}
+  .kv{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed #ffffff14;font-size:14px}
+  .kv span:first-child{color:var(--mut)}
+  .kv b{font-weight:700}
+  .score{display:inline-block;padding:3px 12px;border-radius:100px;font-size:12px;font-weight:700}
+  .g{background:#4ade8033;color:var(--green)}.y{background:#f5c86e33;color:var(--gold)}.r{background:#ff547033;color:var(--red)}
+  .hint{font-size:12px;color:var(--mut);line-height:2;background:#5eead40d;border:1px solid #5eead433;border-radius:12px;padding:10px 14px;margin-top:16px}
+  .footer{text-align:center;color:var(--mut);font-size:12px;padding:40px 20px;border-top:1px solid var(--line);margin-top:40px}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="spot s1"></div><div class="spot s2"></div><div class="beam"></div>
+  <div class="hero-inner">
+    <div class="badge">قدم ۱ از ۳ — نسخه نمایشی لوکال &nbsp; <b>● REC</b></div>
+    <h1><span class="en">NAVABEAT</span><span class="neon">صندلیت رو ببین،</span><br>بعد بخر!</h1>
+    <p class="sub">مثل بازی کامپیوتری، سالن رو بچرخون 👇 روی هر صندلی کلیک کن<br>بهت میگه چند متر تا خواننده فاصله داری + زاویه دید + کیفیت صدا</p>
+    <div class="cta-row">
+      <button class="btn btn-gold" onclick="document.getElementById('venue').scrollIntoView({behavior:'smooth'})">🎟️ انتخاب صندلی</button>
+      <button class="btn btn-glass" onclick="alert('قدم ۲: خرید و پرداخت — به‌زودی!')">دیدن ویدیو سالن</button>
+    </div>
+  </div>
+</section>
+
+<div class="marquee"><span>★★ کنسرت نمونه: شب نوا — ۳۰ آبان — تالار وحدت تهران ★★ VIP از ۵ متری ★★ صدای ۳۶۰ درجه ★★ نور سینمایی ★★ انتخاب زنده صندلی ★★ کنسرت نمونه: شب نوا — ۳۰ آبان — تالار وحدت تهران ★★ VIP از ۵ متری ★★</span></div>
+
+<div class="wrap" id="venue">
+  <h2 class="sec-title"><small>INTERACTIVE 3D HALL</small>سالن سه‌بعدی — کلیک کن 👆</h2>
+  <p class="sec-desc">نقشه رو با اسلایدر بچرخون. <b style="color:#fff">طلایی‌ها VIP</b> نزدیک خواننده‌ان (۵ تا ۱۰ متر). هر چی دورتر بشی، قیمت کمتر میشه ولی خواننده کوچیک‌تر دیده میشه — دقیقاً مثل واقعیت!</p>
+
+  <div class="layout">
+    <div class="stage-box">
+      <div class="tilt-bar">
+        🎥 زاویه دوربین: <input type="range" id="tilt" min="10" max="65" value="38"> <span id="tiltVal">38°</span>
+        &nbsp; | &nbsp; 🖱️ راهنما: کلیک = انتخاب
+      </div>
+      <div class="legend">
+        <span><i class="dot" style="background:linear-gradient(135deg,#f5c86e,#c98a1e)"></i>VIP جلو (۵-۱۰ متر)</span>
+        <span><i class="dot" style="background:#8b7bff"></i>طلایی (۱۰-۲۰ متر)</span>
+        <span><i class="dot" style="background:#5eead4"></i>نقره‌ای (۲۰-۳۵ متر)</span>
+        <span><i class="dot" style="background:#ff5470"></i>بالکن (۳۵-۵۰ متر)</span>
+        <span><i class="dot" style="background:#15151d;border:1px solid #333"></i>فروخته‌شده</span>
+      </div>
+      <div class="hall"><div class="hall-inner" id="hallInner">
+        <div class="stage">STAGE — استیج<div class="singer"></div></div>
+        <div id="seatArea"></div>
+      </div></div>
+    </div>
+
+    <div class="panel" id="panel">
+      <div class="en-lbl">YOUR SEAT DETAILS</div>
+      <h3 id="pTitle">هنوز صندلی انتخاب نکردی 🪑</h3>
+      <div class="big-dist"><span id="pDist">—</span><span style="font-size:18px"> متر تا خواننده</span></div>
+      <div class="meter"><i id="pMeter"></i></div>
+      <div class="kv"><span>بخش</span><b id="pSec">—</b></div>
+      <div class="kv"><span>ردیف / شماره</span><b id="pRow">—</b></div>
+      <div class="kv"><span>زاویه دید به استیج</span><b id="pAng">—</b></div>
+      <div class="kv"><span>کیفیت صدا</span><b id="pSnd">—</b></div>
+      <div class="kv"><span>کیفیت دید</span><b id="pView">—</b></div>
+      <div class="kv"><span>قیمت</span><b id="pPrice" style="color:var(--gold)">—</b></div>
+      <div class="hint" id="pHint">💡 مثل بچه ۱۰ ساله: هر چی عدد «متر» کمتر باشه، خواننده رو بزرگ‌تر و واضح‌تر می‌بینی، ولی پول بیشتری میدی. عدد بزرگ = دورتر و ارزون‌تر.</div>
+      <button class="btn btn-gold" style="width:100%;margin-top:16px" onclick="reserve()">رزرو همین صندلی ✅</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">NavaBeat — قدم ۱ (ظاهر + سالن سه‌بعدی) ساخته شد لوکال ✅ | قدم بعدی: دکمه‌ها و سبد خرید | SESSION-2026-09-25-A</div>
+
+<script>
+// ---- build seats with REAL meter distances ----
+const area = document.getElementById('seatArea');
+const sections = [
+  {name:'VIP جلو', cls:'vip', rows:2, cols:8, baseY:7,  price:2800000},
+  {name:'طلایی',   cls:'gold',rows:3, cols:10,baseY:14, price:1800000},
+  {name:'نقره‌ای', cls:'silver',rows:3, cols:12,baseY:26,price:950000},
+  {name:'بالکن',   cls:'balc',rows:2, cols:12,baseY:42, price:550000},
+];
+let selected = null;
+sections.forEach((s,si)=>{
+  const w = document.createElement('div'); w.className='row3d';
+  const col = document.createElement('div'); col.className='sec';
+  col.innerHTML = `<div class="sec-name">${s.name} — از ${s.baseY} متری</div>`;
+  const grid = document.createElement('div'); grid.className='seats';
+  grid.style.gridTemplateColumns = `repeat(${s.cols}, 30px)`;
+  for(let r=1;r<=s.rows;r++){
+    for(let c=1;c<=s.cols;c++){
+      const d = document.createElement('div');
+      const sold = Math.random()<0.18;
+      d.className = 'seat '+s.cls+(sold?' sold':'');
+      d.textContent = c;
+      if(!sold){
+        // x = sideways meters from center, y = depth meters from singer
+        const x = Math.abs(c-(s.cols+1)/2)*1.4;
+        const y = s.baseY + (r-1)*2.2;
+        const dist = Math.sqrt(x*x+y*y);
+        const ang = Math.round(Math.atan2(x,y)*180/Math.PI);
+        d.onclick = ()=>select(d,s,r,c,dist,ang);
+      }
+      grid.appendChild(d);
+    }
+  }
+  col.appendChild(grid); w.appendChild(col); area.appendChild(w);
+});
+function fa(n){return Number(n).toLocaleString('fa-IR')}
+function select(el,s,r,c,dist,ang){
+  document.querySelectorAll('.seat').forEach(x=>x.classList.remove('selected'));
+  el.classList.add('selected'); selected={s,r,c,dist};
+  const d = Math.round(dist*10)/10;
+  document.getElementById('pTitle').textContent = `بخش ${s.name} — صندلی ${c} 🎉`;
+  document.getElementById('pDist').textContent = d.toLocaleString('fa-IR');
+  document.getElementById('pMeter').style.width = Math.min(100,d/50*100)+'%';
+  document.getElementById('pSec').textContent = s.name;
+  document.getElementById('pRow').textContent = `ردیف ${fa(r)} — شماره ${fa(c)}`;
+  document.getElementById('pAng').textContent = ang===0?'روبه‌رو (عالی!)':`${fa(ang)} درجه انحراف`;
+  const snd = d<12?['عالی — بیس تو سینته','g']:d<25?['خیلی خوب','g']:d<38?['متوسط','y']:['ضعیف‌تر ولی ارزون','r'];
+  const view = d<12?['فوق‌العاده — عرق خواننده رو می‌بینی! 😄','g']:d<25?['واضح و کامل','g']:d<38?['خوب — کل استیج دیده میشه','y']:['دور ولی کل سالن زیر پاته','r'];
+  document.getElementById('pSnd').innerHTML = `<span class="score ${snd[1]}">${snd[0]}</span>`;
+  document.getElementById('pView').innerHTML = `<span class="score ${view[1]}">${view[0]}</span>`;
+  document.getElementById('pPrice').textContent = fa(s.price + (12-Math.min(12,r))*50000) + ' تومان';
+  document.getElementById('pHint').innerHTML = `📏 <b>متراژ دقیق:</b> صندلی تو ${d.toLocaleString('fa-IR')} متر با خواننده فاصله داره ( ${fa(Math.round(d*1.4))} قدم ). اگه قد خواننده ۱۸۰ سانته، از اینجا حدود ${d>30?'یه آدم کوچولو':'خیلی بزرگ و واضح'} دیده میشه!`;
+}
+function reserve(){
+  if(!selected) return alert('اول یه صندلی انتخاب کن! 👆 روش کلیک کن');
+  alert(`قدم ۲ هنوز ساخته نشده 😅\nولی انتخابت ثبت شد تو ذهنم:\nبخش ${selected.s.name} — ${Math.round(selected.dist*10)/10} متر تا خواننده\n\nقدم بعدی: سبد خرید + پرداخت`);
+}
+// tilt slider
+const tilt=document.getElementById('tilt'), hall=document.getElementById('hallInner'), tv=document.getElementById('tiltVal');
+tilt.oninput=()=>{hall.style.transform=`rotateX(${tilt.value}deg)`;tv.textContent=tilt.value+'°'};
+</script>
+</body>
+</html>
