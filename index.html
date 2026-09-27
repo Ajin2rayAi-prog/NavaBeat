@@ -168,9 +168,14 @@ details.faq p{padding:0 18px 14px;color:var(--mut);font-size:13.5px}
 .acard:hover{transform:translateY(-5px);border-color:#ffffff33}
 .cover{position:relative;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:radial-gradient(220px 160px at 50% 110%,hsl(var(--h),70%,45%),transparent),linear-gradient(180deg,#191930,#0b0b16);overflow:hidden}
 .cover::before{content:"♪";font-size:64px;color:#ffffff22;line-height:1}
-.cover .cname{font-size:19px;font-weight:900;position:relative;z-index:1}
+.cover .cname{font-size:21px;font-weight:900;position:relative;z-index:1;text-shadow:0 2px 22px #000;padding:0 10px;text-align:center;line-height:1.6}
 .cover .cgen{font-size:11.5px;color:var(--mut);position:relative;z-index:1}
 .cover .real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,#ffffff12 45%,transparent 60%),radial-gradient(300px 130px at 50% 118%,hsl(var(--h),80%,55%),transparent 70%);pointer-events:none}
+.live-b{position:absolute;top:10px;right:10px;z-index:3;font-size:10px;letter-spacing:2px;background:#000000a0;border:1px solid #ff224455;color:#ff8899;border-radius:100px;padding:3px 10px;font-family:'Inter',sans-serif}
+.ck{display:inline-block;background:#ffffff10;border:1px solid var(--line);border-radius:100px;padding:4px 8px 4px 12px;margin:3px;font-size:12.5px}
+.ck b{cursor:pointer;color:var(--bad);margin-right:6px;font-size:15px}
+.ct{display:block;margin-top:8px;color:var(--gold);font-weight:800;font-size:15px}
 .ainfo{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 4px;font-size:14px}
 .ainfo small{color:var(--gold);font-size:12px}
 .abuy{width:calc(100% - 28px);margin:8px 14px 14px;justify-content:center;padding:11px;font-size:14px}
@@ -277,6 +282,19 @@ details.faq p{padding:0 18px 14px;color:var(--mut);font-size:13.5px}
     <button id="cChange">تغییر خواننده / سانس</button>
   </div>
   <div class="t3d">
+    <aside class="card panel reveal" aria-live="polite">
+      <div class="lbl">YOUR SEAT · اطلاعات و قیمت صندلی</div>
+      <h3 id="pTitle">یک صندلی انتخاب کن</h3>
+      <div class="dist"><span id="pDist">—</span> <small>متر تا خواننده</small></div>
+      <div class="meter"><i id="pMeter"></i></div>
+      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10V7a3 3 0 013-3h10a3 3 0 013 3v3M4 10h16M4 10v8a2 2 0 002 2h12a2 2 0 002-2v-8"/></svg>بخش</span><b id="pSec">—</b></div>
+      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>ردیف / شماره</span><b id="pRow">—</b></div>
+      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.5"/></svg>زاویه دید</span><b id="pAng">—</b></div>
+      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10v4h3l4 4V6l-4 4H4zM16 9a4 4 0 010 6"/></svg>کیفیت صدا</span><b id="pSnd">—</b></div>
+      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg>کیفیت دید</span><b id="pView">—</b></div>
+      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 7h10a3 3 0 010 6H9a3 3 0 000 6h8"/></svg>قیمت</span><b class="price" id="pPrice">—</b></div>
+      <div class="note" id="pHint">راهنما: عدد متر کمتر یعنی خواننده را بزرگ‌تر می‌بینی و پول بیشتری می‌دهی. عدد بزرگ‌تر یعنی دورتر و ارزان‌تر، ولی کل استیج را یک‌جا می‌بینی.</div>
+    </aside>
     <aside class="card reveal" id="seatPick">
       <div class="lbl">SEATS · انتخاب صندلی</div>
       <h3 style="margin:4px 0 10px">کجا بشینی؟</h3>
@@ -351,7 +369,7 @@ details.faq p{padding:0 18px 14px;color:var(--mut);font-size:13.5px}
       </svg>
       <div id="zoneSeats"></div>
       </div>
-      <p style="font-size:12.5px;color:var(--mut)">هر کدام را بزنی، هم سالن سه‌بعدی (چشم خواننده) و هم پیش‌نمایش (چشم تو) همان لحظه عوض می‌شوند — مقایسه کن بعد رزرو کن.</p>
+      <p style="font-size:12.5px;color:var(--mut)">هر کدام را بزنی، هم سالن سه‌بعدی (چشم خواننده) و هم پیش‌نمایش (چشم تو) همان لحظه عوض می‌شوند — مقایسه کن بعد رزرو کن. چند صندلی هم می‌توانی انتخاب کنی (تا ۸ تا)؛ زدن دوباره یک صندلی حذفش می‌کند.</p>
     </aside>
     <section class="card reveal">
       <div class="toolbar">
@@ -379,19 +397,6 @@ details.faq p{padding:0 18px 14px;color:var(--mut);font-size:13.5px}
         <button class="btn btn-ghost" id="seatNext" style="flex:1;justify-content:center;padding:10px;font-size:13px">→ بعدی</button>
       </div>
       <p style="font-size:11.5px;color:var(--mut2,#6e6890);margin-top:8px">با «بعدی / قبلی» مثل این است که دانه‌دانه روی همه صندلی‌ها می‌نشینی و تست می‌کنی.</p>
-    </aside>
-    <aside class="card panel reveal" aria-live="polite">
-      <div class="lbl">YOUR SEAT · اطلاعات و قیمت صندلی</div>
-      <h3 id="pTitle">یک صندلی انتخاب کن</h3>
-      <div class="dist"><span id="pDist">—</span> <small>متر تا خواننده</small></div>
-      <div class="meter"><i id="pMeter"></i></div>
-      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10V7a3 3 0 013-3h10a3 3 0 013 3v3M4 10h16M4 10v8a2 2 0 002 2h12a2 2 0 002-2v-8"/></svg>بخش</span><b id="pSec">—</b></div>
-      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>ردیف / شماره</span><b id="pRow">—</b></div>
-      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.5"/></svg>زاویه دید</span><b id="pAng">—</b></div>
-      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10v4h3l4 4V6l-4 4H4zM16 9a4 4 0 010 6"/></svg>کیفیت صدا</span><b id="pSnd">—</b></div>
-      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg>کیفیت دید</span><b id="pView">—</b></div>
-      <div class="kv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M5 7h10a3 3 0 010 6H9a3 3 0 000 6h8"/></svg>قیمت</span><b class="price" id="pPrice">—</b></div>
-      <div class="note" id="pHint">راهنما: عدد متر کمتر یعنی خواننده را بزرگ‌تر می‌بینی و پول بیشتری می‌دهی. عدد بزرگ‌تر یعنی دورتر و ارزان‌تر، ولی کل استیج را یک‌جا می‌بینی.</div>
     </aside>
   </div>
 
@@ -500,7 +505,7 @@ if(window.__lastRec){const lr=window.__lastRec;cur={x:lr.x,y:2.0+lr.y,z:lr.z};}
 window.__seatCamToIdx=(i)=>{const rec=SEATS[i];if(!rec)return;to={x:rec.x,y:2.0+rec.y,z:rec.z};t=0;
  seatCam.fov=rec.dist<10?55:(rec.dist<25?48:42);seatCam.updateProjectionMatrix();
  const C=new THREE.Color();
- for(let k=0;k<SEATS.length;k++){const q=SEATS[k];inst.setColorAt(k,C.setHex(k===i?0xff2233:(q.sold?0x1a1a24:0x8f8f9a)));}
+ for(let k=0;k<SEATS.length;k++){const q=SEATS[k];const onSel=selected.some(s2=>s2.i===k);inst.setColorAt(k,C.setHex(k===i?0xff2233:(onSel?0xcc2233:(q.sold?0x1a1a24:0x8f8f9a))));}
  if(inst.instanceColor)inst.instanceColor.needsUpdate=true;};
 function size(){const w=mainC.clientWidth||600;rMain.setSize(w,440,false);cam.aspect=w/440;cam.updateProjectionMatrix();
  const pw=prevC.clientWidth||300;rPrev.setSize(pw,210,false);seatCam.aspect=pw/210;seatCam.updateProjectionMatrix();}
@@ -598,7 +603,7 @@ const sections=[
 // lateral positions for a 54-seat row in 8 groups [7,7,7,7,7,7,6,6]
 const HF_XS=(()=>{const G=[7,7,7,7,7,7,6,6],SP=0.52,AISLE=0.45,a=[];let x=-(54*SP+7*AISLE)/2,g=0,left=G[0];
  for(let i=0;i<54;i++){a.push(+(x+SP/2).toFixed(3));x+=SP;if(--left===0&&g<7){x+=AISLE;g++;left=G[g];}}return a;})();
-const SEATS=[];let sel=null;const leftPer={};let leftTotal=0;window.SEATS=SEATS;
+const SEATS=[];let sel=null,selected=[];const leftPer={};let leftTotal=0;window.SEATS=SEATS;
 sections.forEach((s,si)=>{
  let left=0;
  s.rows.forEach(({r,n})=>{
@@ -617,32 +622,65 @@ sections.forEach((s,si)=>{
 });
 const lcEl=document.getElementById('leftCount');if(lcEl)lcEl.textContent=`${fa(leftTotal)} صندلی خالی مانده`;
 const lgEl=document.getElementById('legend');if(lgEl)lgEl.innerHTML=sections.map((s,i)=>`<span class="chip"><i style="background:#3a3a46;border:1px solid #555"></i>${s.name} · <b>${fa(leftPer[i])} خالی</b></span>`).join('')+`<span class="chip"><i style="background:#13131c;border:1px solid #333"></i>فروخته‌شده</span><span class="chip"><i style="background:#ff2233"></i>انتخاب‌شده</span>`;
-function pickRec(rec){
+function saveCart(){try{localStorage.setItem('navabeat-cart',JSON.stringify(selected.map(q=>q.i)))}catch(e){}}
+function renderCart(){
+ const el=document.getElementById('buySum');if(!el)return;
+ if(!selected.length){el.textContent='هنوز صندلی انتخاب نکردی — از نقشه بالا یکی را بزن (چندتایی هم می‌شود، تا ۸ تا)';return;}
+ let total=0,h='';
+ selected.forEach((q,k)=>{
+  const fp=finalP(q.price);total+=fp;
+  h+=`<span class="ck">${sections[q.si].name} · صندلی ${fa(q.num)} <b data-rm="${k}" title="حذف">×</b></span>`;
+ });
+ h+=`<span class="ct">${fa(selected.length)} صندلی · جمع: ${fa(total)} تومان</span>`;
+ el.innerHTML=h;
+}
+function pickRec(rec,mode){
  if(!rec||rec.sold)return;
- document.querySelectorAll('#pickList .pk.sel').forEach(x=>x.classList.remove('sel'));
- sel=rec;const s=sections[rec.si];
- const rowLbl=rec.r===0?'ردیف ویژه (جلوترین)':('ردیف '+fa(rec.r));
- const d=Math.round(rec.dist*10)/10;
- document.getElementById('pTitle').textContent=`${s.name} · صندلی ${fa(rec.num)}`;
+ mode=mode||'toggle';
+ const k=selected.findIndex(q=>q.i===rec.i);
+ if(mode==='solo'){selected=[rec];}
+ else if(mode==='add'){if(k<0)selected.push(rec);}
+ else{if(k>=0)selected.splice(k,1);else{if(selected.length>=8){alert('حداکثر ۸ صندلی در هر سفارش — برای تعداد بیشتر تماس بگیر: 02175675');return;}selected.push(rec);}}
+ sel=selected[selected.length-1]||null;
+ if(!sel){
+  document.getElementById('pTitle').textContent='یک صندلی انتخاب کن';
+  document.getElementById('pDist').textContent='—';
+  document.getElementById('pMeter').style.width='4%';
+  document.getElementById('pSec').textContent='—';
+  document.getElementById('pRow').textContent='—';
+  document.getElementById('pAng').textContent='—';
+  document.getElementById('pSnd').textContent='—';
+  document.getElementById('pView').textContent='—';
+  document.getElementById('pPrice').textContent='—';
+  document.getElementById('pvTag').textContent='هنوز صندلی انتخاب نشده';
+  document.getElementById('pvDist').textContent='— متر';
+  document.getElementById('pvAng').textContent='— درجه';
+  renderCart();saveCart();pickTab(rec.si);
+  if(window.__seatCamToIdx)window.__seatCamToIdx(rec.i);
+  return;
+ }
+ const s=sections[sel.si];
+ const rowLbl=sel.r===0?'ردیف ویژه (جلوترین)':('ردیف '+fa(sel.r));
+ const d=Math.round(sel.dist*10)/10;
+ document.getElementById('pTitle').textContent=`${s.name} · صندلی ${fa(sel.num)}`;
  document.getElementById('pDist').textContent=d.toLocaleString('fa-IR');
   document.getElementById('pMeter').style.width=Math.min(100,d/60*100)+'%';
  document.getElementById('pSec').textContent=`${s.name} (${s.en})`;
- document.getElementById('pRow').textContent=`${rowLbl} · شماره ${fa(rec.num)}`;
- document.getElementById('pAng').textContent=rec.ang===0?'روبه‌رو · بدون انحراف':`${fa(rec.ang)} درجه انحراف از مرکز`;
+ document.getElementById('pRow').textContent=`${rowLbl} · شماره ${fa(sel.num)}`;
+ document.getElementById('pAng').textContent=sel.ang===0?'روبه‌رو · بدون انحراف':`${fa(sel.ang)} درجه انحراف از مرکز`;
  const snd=d<12?['عالی','ok']:d<25?['خیلی خوب','ok']:d<38?['متوسط','mid']:['پایه','low'];
  const vw=d<12?['فوق‌العاده نزدیک','ok']:d<25?['واضح و کامل','ok']:d<38?['نمای کامل استیج','mid']:['پانورامای کل سالن','low'];
  document.getElementById('pSnd').innerHTML=`<span class="pill ${snd[1]}">${snd[0]}</span>`;
  document.getElementById('pView').innerHTML=`<span class="pill ${vw[1]}">${vw[0]}</span>`;
-  document.getElementById('pPrice').textContent=fa(finalP(rec.price))+' تومان';
-  document.getElementById('buySum').textContent=`${s.name} · ${rowLbl} صندلی ${fa(rec.num)} · ${d.toLocaleString('fa-IR')} متر · ${fa(finalP(rec.price))} تومان`;
+  document.getElementById('pPrice').textContent=fa(finalP(sel.price))+' تومان';
+  renderCart();saveCart();
   document.getElementById('pHint').textContent=`متراژ دقیق: ${d.toLocaleString('fa-IR')} متر با خواننده فاصله داری (حدود ${fa(Math.round(d*1.35))} قدم). قد خواننده ۱۸۰ سانتی‌متر از اینجا ${d>30?'کوچک ولی با کل نورپردازی سالن دیده می‌شود':'بزرگ و کاملاً واضح دیده می‌شود'}.`;
-  document.getElementById('pvTag').textContent=`${s.name} · صندلی ${fa(rec.num)} · نمای زنده`;
+  document.getElementById('pvTag').textContent=`${s.name} · صندلی ${fa(sel.num)} · نمای زنده`;
   document.getElementById('pvDist').textContent=`${d.toLocaleString('fa-IR')} متر`;
-  document.getElementById('pvAng').textContent=rec.ang===0?'روبه‌رو':`${fa(rec.ang)} درجه`;
-  window.__lastRec=rec;
-  try{localStorage.setItem('navabeat-seat',String(rec.i))}catch(e){}
-  pickTab(rec.si);
-  if(window.__seatCamToIdx)window.__seatCamToIdx(rec.i);
+  document.getElementById('pvAng').textContent=sel.ang===0?'روبه‌رو':`${fa(sel.ang)} درجه`;
+  window.__lastRec=sel;
+  pickTab(sel.si);
+  if(window.__seatCamToIdx)window.__seatCamToIdx(sel.i);
 }
 window.pickRec=pickRec;
 function pickTab(si,el){
@@ -654,7 +692,7 @@ function pickTab(si,el){
 }
 function selectFirst(si){
  const all=SEATS.filter(q=>q.si===si&&!q.sold);
- if(all.length)pickRec(all[Math.floor(all.length/2)]);
+ if(all.length)pickRec(all[Math.floor(all.length/2)],'solo');
 }
 function renderZone(si){
  const box=document.getElementById('zoneSeats');if(!box)return;const s=sections[si];
@@ -677,7 +715,7 @@ function renderZone(si){
  });
  box.innerHTML=h;
  if(!box.dataset.bound){box.dataset.bound='1';box.addEventListener('click',e=>{const b=e.target.closest('.pk');if(!b||b.disabled)return;const rec=SEATS[+b.dataset.idx];if(rec)pickRec(rec);});}
- if(sel&&sel.si===si){const b=box.querySelector(`.pk[data-idx="${sel.i}"]`);if(b)b.classList.add('sel');}
+ if(sel)selected.forEach(q=>{if(q.si===si){const b=box.querySelector(`.pk[data-idx="${q.i}"]`);if(b)b.classList.add('sel');}});
 }
 (function buildPicker(){
  const pl=document.getElementById('pickList');if(!pl)return;
@@ -690,17 +728,25 @@ function renderZone(si){
  pickTab(1);
 })();
 document.getElementById('buyBtn').addEventListener('click',()=>{
- if(!sel){alert('اول یک صندلی خالی انتخاب کن');return}
- alert(`انتخابت یادداشت شد:\n${sel.s.name} · ${Math.round(sel.dist*10)/10} متر تا خواننده\nقدم ۲: سبد خرید و پرداخت ساخته می‌شود`);
+ if(!selected.length){alert('اول یک صندلی انتخاب کن');return}
+ let total=0;
+ const lines=selected.map((q,k)=>{const fp=finalP(q.price);total+=fp;return `${fa(k+1)}. ${sections[q.si].name} · ردیف ${q.r===0?'ویژه':fa(q.r)} صندلی ${fa(q.num)} · ${fa(fp)} تومان`;});
+ alert(`سبد خرید تو (${fa(selected.length)} صندلی):\n${lines.join('\n')}\nجمع: ${fa(total)} تومان\nقدم ۲: پرداخت ساخته می‌شود`);
 });
-function hop(d){const all=SEATS.filter(q=>!q.sold);if(!all.length)return;let k=all.findIndex(q=>sel&&q.i===sel.i);k=(k+d+all.length)%all.length;pickRec(all[k]);}
+function hop(d){const all=SEATS.filter(q=>!q.sold);if(!all.length)return;let k=all.findIndex(q=>sel&&q.i===sel.i);k=(k+d+all.length)%all.length;pickRec(all[k],'solo');}
 document.getElementById('seatPrev').addEventListener('click',()=>hop(-1));
 document.getElementById('seatNext').addEventListener('click',()=>hop(1));
 (function(){
  try{
-  const sv=localStorage.getItem('navabeat-seat');
-  if(sv){const rec=SEATS[+sv];if(rec&&!rec.sold)pickRec(rec);}
+  let arr=null;
+  try{arr=JSON.parse(localStorage.getItem('navabeat-cart')||'null')}catch(e2){}
+  if(!arr){const sv=localStorage.getItem('navabeat-seat');if(sv)arr=[+sv];}
+  if(arr)arr.forEach(i=>{const rec=SEATS[i];if(rec&&!rec.sold)pickRec(rec,'add');});
  }catch(e){}
+})();
+(function(){
+ const bb=document.getElementById('buySum');
+ if(bb&&!bb.dataset.bound){bb.dataset.bound='1';bb.addEventListener('click',e=>{const x=e.target.closest('[data-rm]');if(!x)return;const k=+x.dataset.rm;if(selected[k])pickRec(selected[k]);});}
 })();
 // ---- artists lineup + showtime modal ----
 const ARTISTS=[
@@ -722,7 +768,7 @@ const ARTISTS=[
 ].map(([name,slug,gen,fp,rate],k)=>({name,slug,gen,from:fp*10000,rate,hue:(k*47)%360}));
 (function buildArts(){
  const g=document.getElementById('artsGrid');if(!g)return;
- g.innerHTML=ARTISTS.map((a,k)=>`<div class="acard"><div class="cover" style="--h:${a.hue}"><span class="cname">${a.name}</span><span class="cgen">${a.gen}</span><img class="real" src="covers/${a.slug}.jpg" alt="${a.name}" loading="lazy" onerror="this.remove()"></div><div class="ainfo"><b>${a.name}</b><small>از ${fa(a.from)} تومان</small></div><button class="btn btn-accent abuy" data-i="${k}">خرید بلیط</button></div>`).join('');
+ g.innerHTML=ARTISTS.map((a,k)=>`<div class="acard"><div class="cover" style="--h:${a.hue}"><span class="cname">${a.name}</span><span class="cgen">${a.gen} · رویال‌هال</span><span class="live-b">LIVE</span><img class="real" src="covers/${a.slug}.jpg" alt="${a.name}" loading="lazy" onerror="this.remove()"></div><div class="ainfo"><b>${a.name}</b><small>از ${fa(a.from)} تومان</small></div><button class="btn btn-accent abuy" data-i="${k}">خرید بلیط</button></div>`).join('');
  g.addEventListener('click',e=>{const b=e.target.closest('.abuy');if(!b)return;openModal(+b.dataset.i);});
 })();
 let modalArtist=0;
