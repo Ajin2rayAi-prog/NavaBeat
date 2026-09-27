@@ -100,7 +100,7 @@ h1 .latin{display:block;font-family:'Inter',sans-serif;font-size:15px;letter-spa
 .seat:hover{transform:translateZ(16px) scale(1.14);border-color:#fff}
 .seat.vip,.seat.gold,.seat.silver,.seat.balc,.seat.balc2{background:linear-gradient(180deg,#3d3d4c,#2b2b36);border-color:#ffffff2e}
 .seat.sold{background:#13131c;color:#4a4a5e;border-color:#22222f;cursor:not-allowed;text-decoration:line-through;opacity:.7}
-.seat.sel{background:linear-gradient(135deg,#ff3344,#b3001b);color:#fff;border-color:#ff8090;outline:2px solid #fff;transform:translateZ(26px) scale(1.2);box-shadow:0 0 28px #ff2233}
+.seat.sel{background:linear-gradient(135deg,#f5c86e,#c99a3f);color:#1a1206;border-color:#ffe9b8;outline:2px solid #fff;transform:translateZ(26px) scale(1.2);box-shadow:0 0 28px #f5c86e}
 /* panel */
 .panel{position:sticky;top:86px}
 @media(max-width:980px){.panel{position:static}}
@@ -139,7 +139,7 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 .zone{cursor:pointer}
 .zone .zshape{transition:filter .2s,stroke .2s}
 .zone:hover .zshape,.zone:focus-visible .zshape{filter:brightness(1.45)}
-.zone.on .zshape{stroke:#ff3344;stroke-width:3;filter:drop-shadow(0 0 10px #ff2233)}
+.zone.on .zshape{stroke:#f5c86e;stroke-width:3;filter:drop-shadow(0 0 10px #f5c86e)}
 #zoneSeats{margin-top:12px}
 #zoneSeats h4{font-size:13px;margin-bottom:8px;color:var(--mut)}
 .zr{margin-bottom:10px}
@@ -149,7 +149,7 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 .pk{width:29px;height:29px;border-radius:8px;border:1px solid #ffffff22;background:#26263c;color:#cfc9ea;font-size:11px;transition:transform .15s,background .15s,border-color .15s}
 .pk:hover{border-color:#fff;transform:scale(1.12)}
 .pk.sold{background:#13131c;color:#4a4a5e;border-color:#22222f;cursor:not-allowed;text-decoration:line-through;opacity:.7}
-.pk.sel{background:linear-gradient(135deg,#ff3344,#b3001b);color:#fff;border-color:#ff8090;outline:2px solid #fff;transform:scale(1.12)}
+.pk.sel{background:linear-gradient(135deg,#f5c86e,#c99a3f);color:#1a1206;border-color:#ffe9b8;outline:2px solid #fff;transform:scale(1.12);box-shadow:0 0 18px #f5c86e88}
 #glMain{width:100%;height:440px;display:block;border-radius:16px;background:#05050c;touch-action:none}
 .gl-hint{font-size:12px;color:var(--mut);margin-top:10px;display:flex;gap:8px;align-items:center}
 .pv{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#05050c;position:relative;margin-bottom:14px}
@@ -165,6 +165,10 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 .subnav a.hot{background:linear-gradient(135deg,var(--accent),#c2410c);color:#fff;border-color:transparent}
 .fab{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(100px);z-index:60;transition:transform .3s;border:none;border-radius:100px;padding:14px 32px;font-size:15px;font-weight:800;background:linear-gradient(135deg,var(--accent),#c2410c);color:#fff;box-shadow:0 12px 40px #ea580c88}
 .fab.show{transform:translateX(-50%) translateY(0)}
+.sectionview{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#05050c;margin-top:12px}
+.sectionview svg{width:100%;display:block}
+.sv-tag{position:absolute;top:8px;right:10px;font-size:11px;background:#000000b0;border:1px solid var(--line);border-radius:100px;padding:3px 12px;color:var(--gold)}
+.stage-hint{font-size:12px;color:var(--mut);margin-top:10px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
@@ -183,7 +187,7 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 
 <header class="hero"><div class="hero-in">
   <div>
-    <span class="kicker"><i></i> فروش زنده · تالار وحدت تهران · ۲۱ آذر ۱۴۰۵</span>
+    <span class="kicker"><i></i> فروش زنده · رویال‌هال اسپیناس · ۲۱ آذر ۱۴۰۵</span>
     <h1><span class="latin">NAVABEAT PRESENTS</span>شب نوا؛ <span class="grad">شبی که صندلیت مهمه</span></h1>
     <p class="lead">نقشه سه‌بعدی سالن را بچرخان، روی هر صندلی بزن و قبل از پرداخت ببین دقیقاً چند متر با خواننده فاصله داری، زاویه دیدت چقدر است و صدا چطور به گوشت می‌رسد.</p>
     <div class="cta-row">
@@ -200,7 +204,7 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
     <div class="stats">
       <div><b>۴ متر</b><small>نزدیک‌ترین صندلی VIP</small></div>
       <div><b>۳۶۰°</b><small>پیش‌نمایش دید از هر صندلی</small></div>
-      <div><b>۷ جایگاه</b><small>عین رویال‌هال اسپیناس</small></div>
+      <div><b>۶ جایگاه</b><small>عین رویال‌هال اسپیناس</small></div>
     </div>
   </div>
   <div class="visual">
@@ -219,7 +223,7 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 <a href="#hall">نمای سه‌بعدی</a><a href="#seatPick" class="hot">انتخاب صندلی</a><a href="#tiers">بخش‌ها و قیمت</a><a href="#faq">سوالات</a>
 </div></nav>
 
-<div class="strip"><span>نزدیک‌ترین صندلی ۴ متری · ۷ جایگاه رویال‌هال: همکف + ۲ بالکن + باکس‌های VIP · شماره‌گذاری عین سالن واقعی (ردیف از سن، صندلی از راست) · نزدیک‌ترین صندلی ۴ متری · ۷ جایگاه رویال‌هال: همکف + ۲ بالکن + باکس‌های VIP ·&nbsp;</span></div>
+<div class="strip"><span>نزدیک‌ترین صندلی ۴ متری · ۶ جایگاه رویال‌هال: VIP + همکف + ۳ بالکن · شماره‌گذاری عین سالن واقعی (ردیف ۱ نزدیک سن، شماره صندلی از راست) · نزدیک‌ترین صندلی ۴ متری · ۶ جایگاه رویال‌هال: VIP + همکف + ۳ بالکن ·&nbsp;</span></div>
 
 <main class="wrap" id="hall">
   <div class="sec-k">INTERACTIVE 3D MAP</div>
@@ -231,74 +235,57 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
       <div class="lbl">SEATS · انتخاب صندلی</div>
       <h3 style="margin:4px 0 10px">کجا بشینی؟</h3>
       <div id="pickList">
-      <svg id="zoneMap" viewBox="0 0 400 600" role="group" aria-label="نقشه مناطق سالن">
+            <svg id="zoneMap" viewBox="0 0 400 300" role="group" aria-label="نقشه مناطق سالن">
         <defs>
-          <linearGradient id="zgStage" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#8f2233"/><stop offset="100%" stop-color="#5c1420"/>
-          </linearGradient>
-          <linearGradient id="zgFloor" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#262d42"/><stop offset="100%" stop-color="#1c2130"/>
-          </linearGradient>
-          <linearGradient id="zgB1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1e2434"/><stop offset="100%" stop-color="#171b26"/>
-          </linearGradient>
-          <linearGradient id="zgB2" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#161a24"/><stop offset="100%" stop-color="#0f121a"/>
-          </linearGradient>
-          <linearGradient id="zgVip" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#241d2c"/><stop offset="100%" stop-color="#1a1520"/>
+          <linearGradient id="zgStage" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#a78bfa"/><stop offset=".5" stop-color="#ea580c"/><stop offset="1" stop-color="#f5c86e"/>
           </linearGradient>
         </defs>
-        <!-- stage -->
-        <rect x="120" y="24" width="160" height="44" rx="9" fill="url(#zgStage)" stroke="#d7ae5f" stroke-width="1.5"/>
-        <text x="200" y="53" text-anchor="middle" font-size="20" font-weight="800" fill="#f3ead6" letter-spacing="6">سن</text>
-        <!-- VIP sides -->
-        <g class="zone" data-si="5" tabindex="0" role="button" aria-label="VIP شرقی">
-          <rect class="zshape" x="292" y="24" width="92" height="52" rx="9" fill="url(#zgVip)" stroke="#8a733f" stroke-width="1"/>
-          <text x="338" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#c79f57">VIP شرقی</text>
+        <rect x="120" y="12" width="160" height="32" rx="10" fill="url(#zgStage)"/>
+        <text x="200" y="34" text-anchor="middle" font-size="15" font-weight="800" fill="#140900">استیج</text>
+        <g class="zone" data-si="2" data-main="1" tabindex="0" role="button" aria-label="همکف درجه ۲">
+          <rect class="zshape" x="95" y="168" width="210" height="52" rx="10" fill="#9fb3c812" stroke="#9fb3c855" stroke-width="1"/>
+          <text x="200" y="192" text-anchor="middle" font-size="13" font-weight="800" fill="#cfd8e6">همکف · درجه ۲</text>
+          <text id="zc2" x="200" y="210" text-anchor="middle" font-size="11" fill="#7d7869"></text>
         </g>
-        <g class="zone" data-si="6" tabindex="0" role="button" aria-label="VIP غربی">
-          <rect class="zshape" x="16" y="24" width="92" height="52" rx="9" fill="url(#zgVip)" stroke="#8a733f" stroke-width="1"/>
-          <text x="62" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#c79f57">VIP غربی</text>
+        <g class="zone" data-si="1" data-main="1" tabindex="0" role="button" aria-label="همکف درجه ۱">
+          <rect class="zshape" x="110" y="108" width="180" height="52" rx="10" fill="#a78bfa14" stroke="#a78bfa66" stroke-width="1"/>
+          <text x="200" y="132" text-anchor="middle" font-size="13" font-weight="800" fill="#d9ccff">همکف · درجه ۱</text>
+          <text id="zc1" x="200" y="150" text-anchor="middle" font-size="11" fill="#7d7869"></text>
         </g>
-        <g class="zone" data-si="0" data-main="1" tabindex="0" role="button" aria-label="VIP جلو">
-          <rect class="zshape" x="70" y="150" width="260" height="64" rx="10" fill="url(#zgFloor)" stroke="rgba(215,174,95,0.35)" stroke-width="1"/>
-          <text x="200" y="178" text-anchor="middle" font-size="15" font-weight="800" fill="#d7ae5f">VIP جلو</text>
-          <text id="zc0" x="200" y="198" text-anchor="middle" font-size="11" fill="#7d7869"></text>
+        <g class="zone" data-si="0" data-main="1" tabindex="0" role="button" aria-label="VIP">
+          <rect class="zshape" x="140" y="56" width="120" height="44" rx="10" fill="#f5c86e18" stroke="#f5c86e88" stroke-width="1.5"/>
+          <text x="200" y="76" text-anchor="middle" font-size="14" font-weight="800" fill="#f5c86e">VIP</text>
+          <text id="zc0" x="200" y="93" text-anchor="middle" font-size="11" fill="#7d7869"></text>
         </g>
-        <!-- gold -->
-        <g class="zone" data-si="1" data-main="1" tabindex="0" role="button" aria-label="بخش طلایی">
-          <rect class="zshape" x="70" y="218" width="260" height="64" rx="10" fill="url(#zgFloor)" stroke="rgba(215,174,95,0.18)" stroke-width="1"/>
-          <text x="200" y="246" text-anchor="middle" font-size="15" font-weight="800" fill="#f3ead6">طلایی</text>
-          <text id="zc1" x="200" y="266" text-anchor="middle" font-size="11" fill="#7d7869"></text>
+        <g class="zone" data-si="3" tabindex="0" role="button" aria-label="بالکن ۱">
+          <rect class="zshape" x="80" y="192" width="240" height="30" rx="9" fill="#5eead422" stroke="#5eead488" stroke-width="1" stroke-dasharray="6 4"/>
+          <text x="200" y="212" text-anchor="middle" font-size="11" font-weight="700" fill="#9df0dd">بالکن ۱</text>
+          <text id="zc3" x="316" y="212" text-anchor="middle" font-size="10" fill="#7d7869"></text>
         </g>
-        <!-- silver -->
-        <g class="zone" data-si="2" data-main="1" tabindex="0" role="button" aria-label="بخش نقره‌ای">
-          <rect class="zshape" x="70" y="286" width="260" height="64" rx="10" fill="url(#zgFloor)" stroke="rgba(215,174,95,0.18)" stroke-width="1"/>
-          <text x="200" y="314" text-anchor="middle" font-size="15" font-weight="800" fill="#f3ead6">نقره‌ای</text>
-          <text id="zc2" x="200" y="334" text-anchor="middle" font-size="11" fill="#7d7869"></text>
+        <g class="zone" data-si="4" tabindex="0" role="button" aria-label="بالکن ۲">
+          <rect class="zshape" x="70" y="226" width="260" height="28" rx="9" fill="#fb923c22" stroke="#fb923c88" stroke-width="1" stroke-dasharray="6 4"/>
+          <text x="200" y="245" text-anchor="middle" font-size="11" font-weight="700" fill="#ffcf9e">بالکن ۲</text>
+          <text id="zc4" x="326" y="245" text-anchor="middle" font-size="10" fill="#7d7869"></text>
         </g>
-        <!-- balcony 1 + sides -->
-        <g class="zone" data-si="7" tabindex="0" role="button" aria-label="بالکن اول شرقی">
-          <rect class="zshape" x="292" y="88" width="92" height="52" rx="9" fill="url(#zgVip)" stroke="rgba(215,174,95,0.18)" stroke-width="1"/>
-          <text x="338" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#c9c2b0">بالکن شرقی</text>
+        <g class="zone" data-si="5" tabindex="0" role="button" aria-label="بالکن ۳">
+          <rect class="zshape" x="95" y="258" width="210" height="26" rx="9" fill="#f472b622" stroke="#f472b688" stroke-width="1" stroke-dasharray="6 4"/>
+          <text x="200" y="276" text-anchor="middle" font-size="11" font-weight="700" fill="#f9b4d4">بالکن ۳</text>
+          <text id="zc5" x="300" y="276" text-anchor="middle" font-size="10" fill="#7d7869"></text>
         </g>
-        <g class="zone" data-si="8" tabindex="0" role="button" aria-label="بالکن اول غربی">
-          <rect class="zshape" x="16" y="88" width="92" height="52" rx="9" fill="url(#zgVip)" stroke="rgba(215,174,95,0.18)" stroke-width="1"/>
-          <text x="62" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#c9c2b0">بالکن غربی</text>
-        </g>
-        <g class="zone" data-si="3" data-main="1" tabindex="0" role="button" aria-label="بالکن اول">
-          <path class="zshape" d="M55 400 Q200 365 345 400 L335 458 Q200 428 65 458 Z" fill="url(#zgB1)" stroke="rgba(215,174,95,0.18)" stroke-width="1"/>
-          <text x="200" y="424" text-anchor="middle" font-size="16" font-weight="800" fill="#f3ead6">بالکن اول</text>
-          <text id="zc3" x="200" y="443" text-anchor="middle" font-size="11" fill="#7d7869"></text>
-        </g>
-        <!-- balcony 2 -->
-        <g class="zone" data-si="4" data-main="1" tabindex="0" role="button" aria-label="بالکن دوم">
-          <path class="zshape" d="M35 478 Q200 443 365 478 L355 552 Q200 522 45 552 Z" fill="url(#zgB2)" stroke="rgba(215,174,95,0.18)" stroke-width="1"/>
-          <text x="200" y="508" text-anchor="middle" font-size="16" font-weight="800" fill="#f3ead6">بالکن دوم</text>
-          <text id="zc4" x="200" y="527" text-anchor="middle" font-size="11" fill="#7d7869"></text>
+        <g id="mapDot" style="display:none">
+          <circle id="mapDotR" cx="200" cy="78" r="9" fill="none" stroke="#f5c86e" stroke-width="2">
+            <animate attributeName="r" values="7;13;7" dur="1.6s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/>
+          </circle>
+          <circle id="mapDotC" cx="200" cy="78" r="4" fill="#f5c86e"/>
         </g>
       </svg>
+      <div class="sectionview">
+        <svg id="sideMap" viewBox="0 0 400 120" role="img" aria-label="برش جانبی سالن"></svg>
+        <span class="sv-tag">برش جانبی · شیب آمفی‌تئاتر (شماتیک)</span>
+      </div>
+      <p class="stage-hint">💡 چیدمان واقعی سالن آمفی‌تئاتری و شیب‌دار است؛ ردیف‌ها از سن شماره‌گذاری می‌شوند (ردیف ۱ = نزدیک‌ترین).</p>
       <div id="zoneSeats"></div>
       </div>
       <p style="font-size:12.5px;color:var(--mut)">هر کدام را بزنی، هم سالن سه‌بعدی (چشم خواننده) و هم پیش‌نمایش (چشم تو) همان لحظه عوض می‌شوند — مقایسه کن بعد رزرو کن.</p>
@@ -369,15 +356,17 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
   </div>
 
   <div class="tiers" id="tiers">
-    <div class="tier reveal"><b>VIP جلو · ۴ تا ۸ متر</b><p>عرق خواننده را می‌بینی. بیس موسیقی را توی سینه حس می‌کنی. برای عاشق‌های ردیف اول.</p><div class="pr">از ۲٬۸۰۰٬۰۰۰ تومان</div></div>
-    <div class="tier reveal"><b>طلایی · ۸ تا ۱۹ متر</b><p>بهترین تعادل قیمت و دید. کل استیج واضح، صدا شفاف. پرفروش‌ترین بخش.</p><div class="pr">از ۱٬۸۰۰٬۰۰۰ تومان</div></div>
-    <div class="tier reveal"><b>نقره‌ای · ۲۰ تا ۳۷ متر</b><p>اقتصادی با دید کامل استیج. مناسب خانواده‌ها.</p><div class="pr">از ۹۵۰٬۰۰۰ تومان</div></div>
-    <div class="tier reveal"><b>بالکن اول و دوم · ۳۸ تا ۵۱ متر</b><p>مثل اسپیناس: از بالا کل سالن و نورپردازی زیر پای توست. ارزان‌ترین بخش.</p><div class="pr">از ۴۵۰٬۰۰۰ تومان</div></div>
+    <div class="tier reveal"><b>VIP · ۴ تا ۸ متر</b><p>نزدیک‌ترین ردیف‌ها به سن. بیس موسیقی را توی سینه حس می‌کنی. برای عاشق‌های ردیف اول.</p><div class="pr">از ۱٬۲۰۰٬۰۰۰ تومان</div></div>
+    <div class="tier reveal"><b>همکف · درجه ۱ · ۱۰ تا ۱۷ متر</b><p>بهترین تعادل قیمت و دید. کل استیج واضح، صدا شفاف. پرفروش‌ترین بخش.</p><div class="pr">از ۹۰۰٬۰۰۰ تومان</div></div>
+    <div class="tier reveal"><b>همکف · درجه ۲ · ۱۸ تا ۲۵ متر</b><p>اقتصادی با دید کامل استیج. مناسب خانواده‌ها.</p><div class="pr">از ۷۰۰٬۰۰۰ تومان</div></div>
+    <div class="tier reveal"><b>بالکن ۱ · ۲۸ تا ۳۱ متر</b><p>از بالا کل سالن و نورپردازی زیر پای توست.</p><div class="pr">از ۵۰۰٬۰۰۰ تومان</div></div>
+    <div class="tier reveal"><b>بالکن ۲ · ۳۴ تا ۳۷ متر</b><p>دید پانورامیک با قیمت مناسب‌تر.</p><div class="pr">از ۴۰۰٬۰۰۰ تومان</div></div>
+    <div class="tier reveal"><b>بالکن ۳ · ۴۰ تا ۴۳ متر</b><p>ارزان‌ترین بخش با نمای کامل استیج.</p><div class="pr">از ۳۰۰٬۰۰۰ تومان</div></div>
   </div>
 
   <div class="card reveal" style="margin-top:22px">
     <b>مشخصات سالن رویال‌هال اسپیناس (ابعاد واقعی سایت)</b>
-    <p style="color:var(--mut);font-size:14px;margin-top:8px">آمفی‌تئاتر ۲۰۳۵ متری · طول ۵۵ × عرض ۳۷ × ارتفاع ۱۶ متر · چیدمان سینمایی ۲۵۵۷ صندلی در ۷ جایگاه (همکف، بالکن اول، بالکن دوم، VIP شرقی/غربی، بالکن شرقی/غربی) · نقشه بالا نسخه نمایشی ۲۴۲۴ صندلی با همان شماره‌گذاری واقعی است (ردیف ۱ نزدیک سن، شماره صندلی از سمت راست) · کاربرد: کنسرت، تئاتر، اجرا و همایش. نقشه سه‌بعدی بالا با همین ابعاد ساخته شده و کف همکف شیب‌دار (آمفی) است تا از دید خواننده هیچ صندلی پشت سر هم گم نشود. رزرو تلفنی سالن: <bdi>02175675</bdi></p>
+    <p style="color:var(--mut);font-size:14px;margin-top:8px">آمفی‌تئاتر ۲۰۳۵ متری · طول ۵۵ × عرض ۳۷ × ارتفاع ۱۶ متر · چیدمان سینمایی حدود ۲۵۰۰ صندلی در ۶ جایگاه (VIP، همکف درجه ۱ و ۲، بالکن ۱ تا ۳) · نقشه بالا نسخه نمایشی ۱۰۰۶ صندلی با همان شماره‌گذاری واقعی است (ردیف ۱ نزدیک سن، شماره صندلی از سمت راست) · کاربرد: کنسرت، تئاتر، اجرا و همایش. نقشه سه‌بعدی بالا با همین ابعاد ساخته شده و کف همکف شیب‌دار (آمفی) است تا از دید خواننده هیچ صندلی پشت سر هم گم نشود. رزرو تلفنی سالن: <bdi>02175675</bdi></p>
   </div>
 
   <div class="card reveal" id="faq" style="margin-top:22px">
@@ -436,8 +425,8 @@ const inst=new THREE.InstancedMesh(seatGeo,seatMat,SEATS.length);
  SEATS.forEach((rec,i)=>{M.makeTranslation(rec.x,0.45+rec.y,rec.z);inst.setMatrixAt(i,M);inst.setColorAt(i,C.setHex(rec.sold?0x1a1a24:0x8f8f9a));});
  inst.instanceMatrix.needsUpdate=true;if(inst.instanceColor)inst.instanceColor.needsUpdate=true;}
 scene.add(inst);
-// balcony decks + railings (balc1 center z≈41, balc2 center z≈48.5)
-[[41,7.75,30,39.2],[48.5,11.25,30,46.7]].forEach(([dz,ty,w,rz])=>{
+// balcony decks + railings (3 tiers above the rear floor)
+[[29.5,7.75,30,27.7],[35.5,11.25,30,33.7],[41.5,14.75,30,39.7]].forEach(([dz,ty,w,rz])=>{
  const deck=new THREE.Mesh(new THREE.BoxGeometry(w,0.5,12),new THREE.MeshStandardMaterial({color:0x101018,roughness:0.9}));
  deck.position.set(0,ty-0.25,dz);scene.add(deck);
  const rail=new THREE.Mesh(new THREE.BoxGeometry(w,1.1,0.5),new THREE.MeshStandardMaterial({color:0x23233a,roughness:0.6,emissive:0xea580c,emissiveIntensity:0.25}));
@@ -464,7 +453,7 @@ if(window.__lastRec){const lr=window.__lastRec;cur={x:lr.x,y:2.0+lr.y,z:lr.z};}
 window.__seatCamToIdx=(i)=>{const rec=SEATS[i];if(!rec)return;to={x:rec.x,y:2.0+rec.y,z:rec.z};t=0;
  seatCam.fov=rec.dist<10?55:(rec.dist<25?48:42);seatCam.updateProjectionMatrix();
  const C=new THREE.Color();
- for(let k=0;k<SEATS.length;k++){const q=SEATS[k];inst.setColorAt(k,C.setHex(k===i?0xff2233:(q.sold?0x1a1a24:0x8f8f9a)));}
+ for(let k=0;k<SEATS.length;k++){const q=SEATS[k];inst.setColorAt(k,C.setHex(k===i?0xf5c86e:(q.sold?0x1a1a24:0x8f8f9a)));}
  if(inst.instanceColor)inst.instanceColor.needsUpdate=true;};
 function size(){const w=mainC.clientWidth||600;rMain.setSize(w,440,false);cam.aspect=w/440;cam.updateProjectionMatrix();
  const pw=prevC.clientWidth||300;rPrev.setSize(pw,210,false);seatCam.aspect=pw/210;seatCam.updateProjectionMatrix();}
@@ -546,15 +535,12 @@ frame();
 <script>
 const fa=n=>Number(n).toLocaleString('fa-IR');
 const sections=[
- {name:'VIP جلو',en:'VIP',cls:'vip',kind:'hf',rows:[{r:0,n:50},{r:1,n:54},{r:2,n:54},{r:3,n:54}],baseY:4,price:2800000,color:'#3a3a46'},
- {name:'طلایی',en:'GOLD',cls:'gold',kind:'hf',rows:Array.from({length:12},(_,k)=>({r:4+k,n:54})),baseY:8,price:1800000,color:'#3a3a46'},
- {name:'نقره‌ای',en:'SILVER',cls:'silver',kind:'hf',rows:Array.from({length:16},(_,k)=>({r:16+k,n:54})).concat([{r:32,n:13},{r:33,n:7}]),baseY:20,price:950000,color:'#3a3a46'},
- {name:'بالکن اول',en:'BALCONY 1',cls:'balc',kind:'rect',rows:[{r:1,n:40},{r:2,n:38},{r:3,n:48},{r:4,n:45},{r:5,n:48},{r:6,n:41},{r:7,n:40}],baseY:38,price:550000,color:'#3a3a46'},
- {name:'بالکن دوم',en:'BALCONY 2',cls:'balc2',kind:'rect',rows:[{r:1,n:53},{r:2,n:54},{r:3,n:53},{r:4,n:54},{r:5,n:53},{r:6,n:13}],baseY:46,price:450000,color:'#3a3a46'},
- {name:'VIP شرقی',en:'VIP EAST',cls:'vip',kind:'side',side:'E',rows:[{r:1,n:5},{r:2,n:7}],baseY:15,yBase:4,tier:0,price:2800000,color:'#3a3a46'},
- {name:'VIP غربی',en:'VIP WEST',cls:'vip',kind:'side',side:'W',rows:[{r:1,n:5},{r:2,n:7}],baseY:15,yBase:4,tier:0,price:2800000,color:'#3a3a46'},
- {name:'بالکن شرقی',en:'BALCONY EAST',cls:'balc',kind:'side',side:'E',rows:[{r:1,n:23},{r:2,n:15}],baseY:26,yBase:20,tier:4.5,price:550000,color:'#3a3a46'},
- {name:'بالکن غربی',en:'BALCONY WEST',cls:'balc',kind:'side',side:'W',rows:[{r:1,n:23},{r:2,n:15}],baseY:26,yBase:20,tier:4.5,price:550000,color:'#3a3a46'},
+ {name:'VIP',en:'VIP',cls:'vip',kind:'hf',depthBase:4,rows:[{r:0,n:22},{r:1,n:24},{r:2,n:24},{r:3,n:26},{r:4,n:26}],price:1200000,color:'#3a3a46'},
+ {name:'همکف · درجه ۱',en:'FLOOR A',cls:'gold',kind:'hf',depthBase:10,rows:[{r:0,n:28},{r:1,n:30},{r:2,n:30},{r:3,n:32},{r:4,n:32},{r:5,n:34},{r:6,n:34},{r:7,n:34}],price:900000,color:'#3a3a46'},
+ {name:'همکف · درجه ۲',en:'FLOOR B',cls:'silver',kind:'hf',depthBase:18,rows:[{r:0,n:34},{r:1,n:34},{r:2,n:36},{r:3,n:36},{r:4,n:36},{r:5,n:38},{r:6,n:38},{r:7,n:38}],price:700000,color:'#3a3a46'},
+ {name:'بالکن ۱',en:'BALCONY 1',cls:'balc',kind:'rect',depthBase:28,tierY:8,rows:[{r:0,n:30},{r:1,n:30},{r:2,n:32},{r:3,n:32}],price:500000,color:'#3a3a46'},
+ {name:'بالکن ۲',en:'BALCONY 2',cls:'balc2',kind:'rect',depthBase:34,tierY:11.5,rows:[{r:0,n:30},{r:1,n:32},{r:2,n:32},{r:3,n:34}],price:400000,color:'#3a3a46'},
+ {name:'بالکن ۳',en:'BALCONY 3',cls:'balc',kind:'rect',depthBase:40,tierY:15,rows:[{r:0,n:28},{r:1,n:30},{r:2,n:30}],price:300000,color:'#3a3a46'},
 ];
 // lateral positions for a 54-seat row in 8 groups [7,7,7,7,7,7,6,6]
 const HF_XS=(()=>{const G=[7,7,7,7,7,7,6,6],SP=0.6,AISLE=0.55,a=[];let x=-(54*SP+7*AISLE)/2,g=0,left=G[0];
@@ -565,13 +551,12 @@ sections.forEach((s,si)=>{
  s.rows.forEach(({r,n})=>{
   for(let j=1;j<=n;j++){
    let x,depth,y,num;
-   if(s.kind==='hf'){const off=Math.floor((54-n)/2),idx=off+j-1;x=HF_XS[idx];num=n-(j-1);depth=4+r;y=r*0.22;}
-   else if(s.kind==='rect'){const idx=j-1;x=+((idx-(n-1)/2)*0.62).toFixed(3);num=n-idx;depth=(si===3?37:45)+r;y=(si===3?8:11.5)+(r-1)*0.15;}
-   else{const dir=s.side==='E'?1:-1;x=dir*(15.5+(r-1)*1.1);num=j;depth=s.yBase+(j-1)*0.75;y=s.tier;}
+   if(s.kind==='hf'){const off=Math.floor((54-n)/2),idx=off+j-1;x=HF_XS[idx];num=n-(j-1);depth=s.depthBase+r;y=((s.depthBase-4)+r)*0.22;}
+   else{const idx=j-1;x=+((idx-(n-1)/2)*0.62).toFixed(3);num=n-idx;depth=s.depthBase+r;y=s.tierY+r*0.15;}
    const dist=Math.sqrt(x*x+depth*depth),ang=Math.round(Math.atan2(Math.abs(x),depth)*180/Math.PI);
    const sold=((SEATS.length*2654435761)%100)<18;
    if(!sold)left++;
-   SEATS.push({i:SEATS.length,si,r,num,x,y,z:depth,dist,ang,sold,price:s.price+(r<=3?(4-r)*50000:0),s});
+   SEATS.push({i:SEATS.length,si,r,num,x,y,z:depth,dist,ang,sold,price:s.price+(s.rows.length-1-r)*15000,s});
   }
  });
  leftPer[si]=left;leftTotal+=left;
@@ -582,7 +567,7 @@ function pickRec(rec){
  if(!rec||rec.sold)return;
  document.querySelectorAll('#pickList .pk.sel').forEach(x=>x.classList.remove('sel'));
  sel=rec;const s=sections[rec.si];
- const rowLbl=rec.r===0?'ردیف ویژه (جلوترین)':('ردیف '+fa(rec.r));
+ const rowLbl='ردیف '+fa(rec.r+1);
  const d=Math.round(rec.dist*10)/10;
  document.getElementById('pTitle').textContent=`${s.name} · صندلی ${fa(rec.num)}`;
  document.getElementById('pDist').textContent=d.toLocaleString('fa-IR');
@@ -595,13 +580,14 @@ function pickRec(rec){
  document.getElementById('pSnd').innerHTML=`<span class="pill ${snd[1]}">${snd[0]}</span>`;
  document.getElementById('pView').innerHTML=`<span class="pill ${vw[1]}">${vw[0]}</span>`;
   document.getElementById('pPrice').textContent=fa(rec.price)+' تومان';
-  document.getElementById('buySum').textContent=`${s.name} · ${rowLbl} صندلی ${fa(rec.num)} · ${d.toLocaleString('fa-IR')} متر · ${fa(rec.price)} تومان`;
+  document.getElementById('buySum').textContent=`${s.name} · ${rowLbl} · صندلی ${fa(rec.num)} · ${d.toLocaleString('fa-IR')} متر · ${fa(rec.price)} تومان`;
   document.getElementById('pHint').textContent=`متراژ دقیق: ${d.toLocaleString('fa-IR')} متر با خواننده فاصله داری (حدود ${fa(Math.round(d*1.35))} قدم). قد خواننده ۱۸۰ سانتی‌متر از اینجا ${d>30?'کوچک ولی با کل نورپردازی سالن دیده می‌شود':'بزرگ و کاملاً واضح دیده می‌شود'}.`;
   document.getElementById('pvTag').textContent=`${s.name} · صندلی ${fa(rec.num)} · نمای زنده`;
   document.getElementById('pvDist').textContent=`${d.toLocaleString('fa-IR')} متر`;
   document.getElementById('pvAng').textContent=rec.ang===0?'روبه‌رو':`${fa(rec.ang)} درجه`;
   window.__lastRec=rec;
   pickTab(rec.si);
+  updateMapDot();drawSide();
   if(window.__seatCamToIdx)window.__seatCamToIdx(rec.i);
 }
 window.pickRec=pickRec;
@@ -613,19 +599,15 @@ function pickTab(si,el){
  else{const m=document.querySelector(`#zoneMap .zone[data-si="${si}"][data-main="1"]`);if(m)m.classList.add('on');}
  renderZone(si);
 }
-function selectFirst(si){
- const all=SEATS.filter(q=>q.si===si&&!q.sold);
- if(all.length)pickRec(all[Math.floor(all.length/2)]);
-}
 function renderZone(si){
  const box=document.getElementById('zoneSeats');if(!box)return;const s=sections[si];
  const gapAfter=s.kind==='hf'?[7,14,21,28,35,42,48]:null;
- let h=`<h4>${s.name} · از ${fa(s.baseY)} متری · از ${fa(s.price)} تومان · ردیف ۱ نزدیک سن، شماره از راست</h4>`;
+ let h=`<h4>${s.name} · از ${fa(s.depthBase)} متری · از ${fa(s.price)} تومان · ردیف ۱ نزدیک سن، شماره از راست</h4>`;
  const byRow={};
  SEATS.forEach(rec=>{if(rec.si!==si)return;(byRow[rec.r]=byRow[rec.r]||[]).push(rec);});
  Object.keys(byRow).map(Number).sort((a,b)=>a-b).forEach(r=>{
   const list=byRow[r].slice().sort((a,b)=>a.num-b.num);
-  const n=list.length,rlbl=r===0?'ویژه':fa(r);
+  const n=list.length,rlbl=fa(r+1);
   h+=`<div class="zr"><span class="zr-l">ردیف ${rlbl} · ${fa(n)} صندلی</span><div class="pick-grid">`;
   list.forEach((rec,k)=>{
    h+=`<button type="button" class="pk${rec.sold?' sold':''}" data-idx="${rec.i}"${rec.sold?' disabled':''} aria-label="${s.name} ردیف ${rlbl} شماره ${fa(rec.num)}">${fa(rec.num)}</button>`;
@@ -643,11 +625,11 @@ function renderZone(si){
 (function buildPicker(){
  const pl=document.getElementById('pickList');if(!pl)return;
  document.querySelectorAll('#zoneMap .zone').forEach(z=>{
-  z.addEventListener('click',()=>{selectFirst(+z.dataset.si);pickTab(+z.dataset.si,z);});
-  z.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectFirst(+z.dataset.si);pickTab(+z.dataset.si,z);}});
+  z.addEventListener('click',()=>{pickTab(+z.dataset.si,z);});
+  z.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pickTab(+z.dataset.si,z);}});
  });
  sections.forEach((s,si)=>{const el=document.getElementById('zc'+si);if(el)el.textContent=fa(leftPer[si])+' خالی';});
- pickTab(1);
+ pickTab(1);drawSide();
 })();
 document.getElementById('buyBtn').addEventListener('click',()=>{
  if(!sel){alert('اول یک صندلی خالی انتخاب کن');return}
@@ -656,7 +638,37 @@ document.getElementById('buyBtn').addEventListener('click',()=>{
 function hop(d){const all=SEATS.filter(q=>!q.sold);if(!all.length)return;let k=all.findIndex(q=>sel&&q.i===sel.i);k=(k+d+all.length)%all.length;pickRec(all[k]);}
 document.getElementById('seatPrev').addEventListener('click',()=>hop(-1));
 document.getElementById('seatNext').addEventListener('click',()=>hop(1));
-(function(){const all=SEATS.filter(q=>q.si===1&&!q.sold);if(all.length)pickRec(all[Math.floor(all.length/2)]);})();
+/* ---------- map dot + side section (amphitheater slope, schematic) ---------- */
+const MAP_DOT={0:[200,78],1:[200,134],2:[200,194],3:[200,207],4:[200,240],5:[200,271]};
+function updateMapDot(){
+ const g=document.getElementById('mapDot');if(!g)return;
+ if(!sel){g.style.display='none';return;}
+ const [cx,cy]=MAP_DOT[sel.si]||[200,150];
+ g.style.display='block';
+ ['mapDotR','mapDotC'].forEach(id=>{const c=document.getElementById(id);if(c){c.setAttribute('cx',cx);c.setAttribute('cy',cy);}});
+}
+function drawSide(){
+ const el=document.getElementById('sideMap');if(!el)return;
+ const faN=['۱','۲','۳'];
+ let h='<rect width="400" height="120" fill="#05050c"/>';
+ h+='<rect x="10" y="56" width="30" height="46" rx="4" fill="#a78bfa" opacity=".85"/>';
+ h+='<text x="25" y="82" text-anchor="middle" font-size="10" fill="#0a0618" font-weight="800">سن</text>';
+ const fcols=['#f5c86e','#a78bfa','#9fb3c8'];
+ const floorOn=sel&&sel.si<3;
+ for(let k=0;k<18;k++){
+  const x=58+k*11,y=96-k*2.2,c=k<5?fcols[0]:k<12?fcols[1]:fcols[2];
+  h+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.4" fill="${c}" opacity="${floorOn?1:.35}"/>`;
+ }
+ const bcols=['#5eead4','#fb923c','#f472b6'],by=[64,44,24];
+ for(let b=0;b<3;b++){
+  const x0=150+b*22,on=sel&&sel.si===3+b;
+  h+=`<rect x="${x0}" y="${by[b]}" width="${360-x0}" height="7" rx="3.5" fill="${bcols[b]}" opacity="${on?1:.28}"/>`;
+  for(let k=0;k<12;k++)h+=`<circle cx="${x0+14+k*16}" cy="${by[b]-6}" r="3" fill="${bcols[b]}" opacity="${on?1:.3}"/>`;
+  h+=`<text x="${x0-8}" y="${by[b]+6}" text-anchor="end" font-size="9" fill="${on?'#fff':'#6e6890'}">بالکن ${faN[b]}</text>`;
+ }
+ h+='<text x="388" y="113" text-anchor="end" font-size="9" fill="#6e6890">شیب آمفی‌تئاتر · ردیف‌های عقبی بالاتر · بدون نقطه کور</text>';
+ el.innerHTML=h;
+}
 // tilt slider temporarily disabled (v18) — uncomment to re-enable
 // const tilt=document.getElementById('tilt'),hall=document.getElementById('hallIn'),tv=document.getElementById('tiltVal');
 // tilt.addEventListener('input',()=>{hall.style.transform=`rotateX(${tilt.value}deg)`;tv.textContent=tilt.value+'°'});
