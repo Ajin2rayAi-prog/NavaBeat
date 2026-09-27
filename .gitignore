@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+# local numbered backups stay on disk + backup/* branches, not on main
+backups/

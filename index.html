@@ -3,9 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="رزرو بلیط کنسرت رویال‌هال اسپیناس با سالن سه‌بعدی: فاصله دقیق هر صندلی تا خواننده، زاویه دید و پیش‌نمایش زنده از چشم صندلی.">
+<meta property="og:title" content="NavaBeat — رزرو سه‌بعدی بلیط کنسرت رویال‌هال">
+<meta property="og:description" content="صندلیت را ببین، بعد بخر: فاصله متری، زاویه دید و نمای زنده از هر صندلی.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://github.com/Ajin2rayAi-prog/NavaBeat">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; frame-ancestors 'none'; object-src 'none'; base-uri 'self'">
 <title>NavaBeat — شب نوا | رزرو سه‌بعدی</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;700;800;900&display=swap');
+@font-face{font-family:'Vazirmatn';font-style:normal;font-weight:100 900;font-display:swap;src:url('libs/fonts/vazirmatn-arabic.woff2') format('woff2');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFC}
+@font-face{font-family:'Vazirmatn';font-style:normal;font-weight:100 900;font-display:swap;src:url('libs/fonts/vazirmatn-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('libs/fonts/inter-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --bg:#08080f; --bg2:#0d0d1a; --card:#121222; --card2:#171730;
@@ -78,29 +87,7 @@ h1 .latin{display:block;font-family:'Inter',sans-serif;font-size:15px;letter-spa
 .sec-k{font-size:12px;letter-spacing:4px;color:var(--accent2);font-weight:700}
 .sec-t{font-size:clamp(26px,3.6vw,42px);font-weight:900;margin:6px 0 8px}
 .sec-d{color:var(--mut);max-width:72ch;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
-@media(max-width:980px){.grid{grid-template-columns:1fr}}
 .card{background:linear-gradient(180deg,var(--card),#0d0d1c);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-.toolbar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--mut);margin-bottom:14px}
-.toolbar input[type=range]{accent-color:var(--accent);width:150px}
-.chip-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:100px;padding:6px 13px;background:#ffffff06}
-.chip i{width:11px;height:11px;border-radius:4px;display:inline-block}
-.chip b{color:#fff}
-.hall{perspective:1300px;display:flex;justify-content:center}
-.hall-in{width:100%;max-width:660px;transform:rotateX(38deg);transform-style:preserve-3d;transition:transform .25s;background:radial-gradient(ellipse at 50% 0%,#1d1d38,#0a0a14 72%);border:1px solid var(--line);border-radius:18px;padding:24px 16px 20px;box-shadow:0 40px 90px #000b}
-.stage{height:70px;border-radius:14px;background:linear-gradient(90deg,#a78bfa,#ea580c,#f5c86e);display:flex;align-items:center;justify-content:center;font-weight:900;color:#140900;letter-spacing:1px;position:relative;transform:translateZ(46px);box-shadow:0 0 50px #7c3aed66;font-size:15px}
-.singer{position:absolute;top:50%;left:50%;width:20px;height:20px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 18px #fff,0 0 44px var(--gold);animation:pl 1.7s infinite}
-@keyframes pl{50%{box-shadow:0 0 8px #fff,0 0 22px var(--gold)}}
-.zones{margin-top:38px;display:grid;gap:18px}
-.zone-t{font-size:12px;color:var(--mut);margin-bottom:8px;display:flex;justify-content:space-between}
-.zone-t b{color:#fff}
-.seats{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
-.seat{width:28px;height:28px;border-radius:9px 9px 4px 4px;border:1px solid #ffffff26;background:linear-gradient(180deg,#3d3d4c,#2b2b36);color:#e8e6f5;font-size:11px;font-family:'Inter',sans-serif;transition:transform .2s,box-shadow .2s,background .2s;display:flex;align-items:center;justify-content:center}
-.seat:hover{transform:translateZ(16px) scale(1.14);border-color:#fff}
-.seat.vip,.seat.gold,.seat.silver,.seat.balc,.seat.balc2{background:linear-gradient(180deg,#3d3d4c,#2b2b36);border-color:#ffffff2e}
-.seat.sold{background:#13131c;color:#4a4a5e;border-color:#22222f;cursor:not-allowed;text-decoration:line-through;opacity:.7}
-.seat.sel{background:linear-gradient(135deg,#ff3344,#b3001b);color:#fff;border-color:#ff8090;outline:2px solid #fff;transform:translateZ(26px) scale(1.2);box-shadow:0 0 28px #ff2233}
 /* panel */
 .panel{position:sticky;top:86px}
 @media(max-width:980px){.panel{position:static}}
@@ -109,7 +96,7 @@ h1 .latin{display:block;font-family:'Inter',sans-serif;font-size:15px;letter-spa
 .dist{font-size:56px;font-weight:900;line-height:1.1;margin:12px 0 0}
 .dist small{font-size:15px;color:var(--mut);font-weight:400}
 .meter{height:10px;background:#ffffff12;border-radius:100px;overflow:hidden;margin:12px 0 18px}
-.meter i{display:block;height:100%;width:4%;background:linear-gradient(90deg,var(--ok),var(--warn),var(--accent),var(--bad));border-radius:100px;transition:width .35s}
+.meter i{display:block;height:100%;width:4%;background:linear-gradient(90deg,#8a6a2f,var(--gold));border-radius:100px;transition:width .35s}
 .kv{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px dashed #ffffff14;font-size:14px}
 .kv .k{color:var(--mut);display:flex;align-items:center;gap:8px}
 .kv svg{width:17px;height:17px;flex:none}
@@ -125,7 +112,16 @@ h1 .latin{display:block;font-family:'Inter',sans-serif;font-size:15px;letter-spa
 .tier .pr{color:var(--gold);font-weight:800}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s}
 .reveal.on{opacity:1;transform:none}
-footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;color:var(--mut2);font-size:12.5px}
+footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;color:#9a94b8;font-size:12.5px}
+#hall,#artists,#tiers,#faq,#seatPick{scroll-margin-top:130px}
+.skip{position:absolute;right:12px;top:-60px;z-index:100;background:var(--accent);color:#fff;border-radius:10px;padding:10px 18px;font-size:14px;transition:top .2s;text-decoration:none}
+.skip:focus{top:10px}
+details.faq{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background:#ffffff05}
+details.faq summary{cursor:pointer;padding:13px 18px;font-weight:700;font-size:14.5px;list-style:none}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::before{content:"+";color:var(--gold);font-weight:900;margin-left:8px}
+details.faq[open] summary::before{content:"−"}
+details.faq p{padding:0 18px 14px;color:var(--mut);font-size:13.5px}
 .t3d{display:grid;grid-template-columns:.9fr 1.6fr 1fr 1fr;gap:16px;align-items:start;margin-bottom:22px}
 @media(max-width:1500px){.t3d{grid-template-columns:1fr 1fr}}
 @media(max-width:860px){.t3d{grid-template-columns:1fr}}
@@ -150,7 +146,9 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 .pk:hover{border-color:#fff;transform:scale(1.12)}
 .pk.sold{background:#13131c;color:#4a4a5e;border-color:#22222f;cursor:not-allowed;text-decoration:line-through;opacity:.7}
 .pk.sel{background:linear-gradient(135deg,#ff3344,#b3001b);color:#fff;border-color:#ff8090;outline:2px solid #fff;transform:scale(1.12)}
-#glMain{width:100%;height:440px;display:block;border-radius:16px;background:#05050c;touch-action:none}
+#glMain{width:100%;height:440px;display:block;border-radius:16px;background:#05050c;touch-action:pan-y}
+#glPrev{touch-action:pan-y}
+@media(max-width:760px){#glMain{height:min(440px,60vh)}}
 .gl-hint{font-size:12px;color:var(--mut);margin-top:10px;display:flex;gap:8px;align-items:center}
 .pv{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#05050c;position:relative;margin-bottom:14px}
 #glPrev{width:100%;height:210px;display:block}
@@ -165,10 +163,38 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 .subnav a.hot{background:linear-gradient(135deg,var(--accent),#c2410c);color:#fff;border-color:transparent}
 .fab{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(100px);z-index:60;transition:transform .3s;border:none;border-radius:100px;padding:14px 32px;font-size:15px;font-weight:800;background:linear-gradient(135deg,var(--accent),#c2410c);color:#fff;box-shadow:0 12px 40px #ea580c88}
 .fab.show{transform:translateX(-50%) translateY(0)}
+.arts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px;margin-top:26px}
+.acard{background:linear-gradient(180deg,var(--card),#0d0d1c);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s}
+.acard:hover{transform:translateY(-5px);border-color:#ffffff33}
+.cover{position:relative;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:radial-gradient(220px 160px at 50% 110%,hsl(var(--h),70%,45%),transparent),linear-gradient(180deg,#191930,#0b0b16);overflow:hidden}
+.cover::before{content:"♪";font-size:64px;color:#ffffff22;line-height:1}
+.cover .cname{font-size:19px;font-weight:900;position:relative;z-index:1}
+.cover .cgen{font-size:11.5px;color:var(--mut);position:relative;z-index:1}
+.cover .real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.ainfo{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 4px;font-size:14px}
+.ainfo small{color:var(--gold);font-size:12px}
+.abuy{width:calc(100% - 28px);margin:8px 14px 14px;justify-content:center;padding:11px;font-size:14px}
+.movl{position:fixed;inset:0;z-index:100;background:#000000c8;backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
+.movl.show{display:flex}
+.mbox{position:relative;width:100%;max-width:440px;background:linear-gradient(180deg,#1a1a30,#0d0d1c);border:1px solid var(--line);border-radius:24px;padding:30px 26px;text-align:center;animation:pop .25s}
+@keyframes pop{from{transform:scale(.92);opacity:0}}
+.mx{position:absolute;top:12px;left:12px;background:#ffffff10;border:1px solid var(--line);color:#fff;border-radius:10px;width:34px;height:34px;font-size:15px}
+.mbox h3{font-size:24px;margin:6px 0}
+.msub{color:var(--mut);font-size:13.5px;margin-bottom:18px}
+.mrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mtime{background:#ffffff08;border:1px solid var(--line);border-radius:16px;padding:18px 8px;color:#fff;transition:.2s;display:flex;flex-direction:column;gap:6px}
+.mtime:hover{border-color:var(--accent);background:#ea580c22;transform:translateY(-3px)}
+.mtime b{font-size:19px}
+.mtime small{color:var(--mut);font-size:11.5px}
+.cbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:linear-gradient(135deg,#1c1030,#2e1306);border:1px solid var(--line);border-radius:18px;padding:14px 20px;margin-bottom:18px;font-size:15px}
+.cbar button{background:none;border:1px solid var(--line);color:var(--mut);border-radius:100px;padding:7px 18px;font-size:12.5px}
+.cbar button:hover{color:#fff;border-color:#fff}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+
+<a class="skip" href="#hall">پرش به انتخاب صندلی</a>
 
 <nav class="nav"><div class="nav-in">
   <div class="logo">
@@ -183,7 +209,7 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 
 <header class="hero"><div class="hero-in">
   <div>
-    <span class="kicker"><i></i> فروش زنده · تالار وحدت تهران · ۲۱ آذر ۱۴۰۵</span>
+    <span class="kicker"><i></i> فروش زنده · رویال‌هال اسپیناس · ۲۱ آذر ۱۴۰۵</span>
     <h1><span class="latin">NAVABEAT PRESENTS</span>شب نوا؛ <span class="grad">شبی که صندلیت مهمه</span></h1>
     <p class="lead">نقشه سه‌بعدی سالن را بچرخان، روی هر صندلی بزن و قبل از پرداخت ببین دقیقاً چند متر با خواننده فاصله داری، زاویه دیدت چقدر است و صدا چطور به گوشت می‌رسد.</p>
     <div class="cta-row">
@@ -206,7 +232,7 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
   <div class="visual">
     <div class="visual-top"><span>پیش‌نمایش زنده سالن</span><span class="live"><i style="width:7px;height:7px;border-radius:50%;background:#ff2244;display:inline-block"></i> LIVE</span></div>
     <div class="poster"><div class="beam b1"></div><div class="beam b2"></div><div class="beam b3"></div><div class="stage-line"></div><div class="crowd"></div></div>
-    <div class="count">
+    <div class="count" role="timer" aria-label="زمان باقی‌مانده تا کنسرت">
       <div><b id="cdD">۰۰</b><small>روز</small></div>
       <div><b id="cdH">۰۰</b><small>ساعت</small></div>
       <div><b id="cdM">۰۰</b><small>دقیقه</small></div>
@@ -216,16 +242,40 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
 </div></header>
 
 <nav class="subnav"><div class="subnav-in">
-<a href="#hall">نمای سه‌بعدی</a><a href="#seatPick" class="hot">انتخاب صندلی</a><a href="#tiers">بخش‌ها و قیمت</a><a href="#faq">سوالات</a>
+<a href="#artists">خواننده‌ها</a><a href="#hall">نمای سه‌بعدی</a><a href="#seatPick" class="hot">انتخاب صندلی</a><a href="#tiers">بخش‌ها و قیمت</a><a href="#faq">سوالات</a>
 </div></nav>
 
 <div class="strip"><span>نزدیک‌ترین صندلی ۴ متری · ۷ جایگاه رویال‌هال: همکف + ۲ بالکن + باکس‌های VIP · شماره‌گذاری عین سالن واقعی (ردیف از سن، صندلی از راست) · نزدیک‌ترین صندلی ۴ متری · ۷ جایگاه رویال‌هال: همکف + ۲ بالکن + باکس‌های VIP ·&nbsp;</span></div>
+
+<section class="wrap" id="artists" style="padding-bottom:0">
+  <div class="sec-k">LINEUP · خواننده‌ها</div>
+  <h2 class="sec-t">کی رو می‌خوای ببینی؟</h2>
+  <p class="sec-d">۳۰ خواننده، رویال‌هال اسپیناس. روی «خرید بلیط» بزن، سانس رو انتخاب کن، بعد بیا صندلیت رو با چشم خودت ببین. (اگه عکس واقعی خواننده‌ای رو داری، بنداز توی پوشه covers با همین اسم انگلیسی — خودش میاد روی کارت.)</p>
+  <div class="arts-grid" id="artsGrid"></div>
+</section>
+
+<div class="movl" id="movl" aria-hidden="true">
+  <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="mName">
+    <button class="mx" id="mx" aria-label="بستن">✕</button>
+    <div class="en-lbl" style="font-size:10.5px;letter-spacing:3.5px;color:var(--mut)">SELECT SHOWTIME · انتخاب سانس</div>
+    <h3 id="mName"></h3>
+    <p class="msub">رویال‌هال اسپیناس · ۲۱ آذر ۱۴۰۵ — سانس اجرا رو انتخاب کن:</p>
+    <div class="mrow">
+      <button class="mtime" data-t="۱۹:۰۰"><b>۱۹:۰۰</b><small>باز شدن درها ۱۸:۰۰</small></button>
+      <button class="mtime" data-t="۲۲:۰۰"><b>۲۲:۰۰</b><small>باز شدن درها ۲۱:۰۰</small></button>
+    </div>
+  </div>
+</div>
 
 <main class="wrap" id="hall">
   <div class="sec-k">INTERACTIVE 3D MAP</div>
   <h2 class="sec-t">سالن را لمس کن، فاصله را ببین</h2>
   <p class="sec-d">نشانگر بالای استیج همان خواننده است. هر ردیف که پایین‌تر می‌روی از او دورتر می‌شوی. اسلایدر زاویه دوربین را بکش تا حس سه‌بعدی عوض شود. صندلی‌های خط‌خورده قبلاً فروخته شده‌اند.</p>
 
+  <div class="cbar reveal" id="cbar" style="display:none">
+    <div>کنسرت <b id="cSinger" style="color:var(--gold)"></b> · سانس <b id="cTime"></b> · رویال‌هال اسپیناس</div>
+    <button id="cChange">تغییر خواننده / سانس</button>
+  </div>
   <div class="t3d">
     <aside class="card reveal" id="seatPick">
       <div class="lbl">SEATS · انتخاب صندلی</div>
@@ -253,11 +303,11 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
         <rect x="120" y="24" width="160" height="44" rx="9" fill="url(#zgStage)" stroke="#d7ae5f" stroke-width="1.5"/>
         <text x="200" y="53" text-anchor="middle" font-size="20" font-weight="800" fill="#f3ead6" letter-spacing="6">سن</text>
         <!-- VIP sides -->
-        <g class="zone" data-si="5" tabindex="0" role="button" aria-label="VIP شرقی">
+        <g class="zone" data-si="5" data-main="1" tabindex="0" role="button" aria-label="VIP شرقی">
           <rect class="zshape" x="292" y="24" width="92" height="52" rx="9" fill="url(#zgVip)" stroke="#8a733f" stroke-width="1"/>
           <text x="338" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#c79f57">VIP شرقی</text>
         </g>
-        <g class="zone" data-si="6" tabindex="0" role="button" aria-label="VIP غربی">
+        <g class="zone" data-si="6" data-main="1" tabindex="0" role="button" aria-label="VIP غربی">
           <rect class="zshape" x="16" y="24" width="92" height="52" rx="9" fill="url(#zgVip)" stroke="#8a733f" stroke-width="1"/>
           <text x="62" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#c79f57">VIP غربی</text>
         </g>
@@ -279,11 +329,11 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
           <text id="zc2" x="200" y="334" text-anchor="middle" font-size="11" fill="#7d7869"></text>
         </g>
         <!-- balcony 1 + sides -->
-        <g class="zone" data-si="7" tabindex="0" role="button" aria-label="بالکن اول شرقی">
+        <g class="zone" data-si="7" data-main="1" tabindex="0" role="button" aria-label="بالکن اول شرقی">
           <rect class="zshape" x="292" y="88" width="92" height="52" rx="9" fill="url(#zgVip)" stroke="rgba(215,174,95,0.18)" stroke-width="1"/>
           <text x="338" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#c9c2b0">بالکن شرقی</text>
         </g>
-        <g class="zone" data-si="8" tabindex="0" role="button" aria-label="بالکن اول غربی">
+        <g class="zone" data-si="8" data-main="1" tabindex="0" role="button" aria-label="بالکن اول غربی">
           <rect class="zshape" x="16" y="88" width="92" height="52" rx="9" fill="url(#zgVip)" stroke="rgba(215,174,95,0.18)" stroke-width="1"/>
           <text x="62" y="118" text-anchor="middle" font-size="11" font-weight="700" fill="#c9c2b0">بالکن غربی</text>
         </g>
@@ -345,22 +395,6 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
     </aside>
   </div>
 
-  <!-- 2D map section removed from view (v19) — uncomment to restore
-  <div class="grid">
-    <section class="card reveal">
-      <div class="toolbar">
-        <span style="margin-inline-start:auto" id="leftCount"></span>
-      </div>
-      <div class="chip-row" id="legend"></div>
-      <div class="hall"><div class="hall-in" id="hallIn">
-        <div class="stage">استیج · STAGE<div class="singer" title="خواننده"></div></div>
-        <div class="zones" id="zones"></div>
-      </div></div>
-    </section>
-  </div>
-  -->
-  <div id="zones" style="display:none" aria-hidden="true"></div>
-
   <div class="buybar reveal">
     <div class="bs"><b>انتخاب تو برای خرید:</b><small id="buySum">هنوز صندلی انتخاب نکردی — از نقشه بالا یکی را بزن</small></div>
     <button class="btn btn-accent" id="buyBtn">خرید بلیط
@@ -376,18 +410,22 @@ footer{border-top:1px solid var(--line2);padding:34px 24px;text-align:center;col
   </div>
 
   <div class="card reveal" style="margin-top:22px">
-    <b>مشخصات سالن رویال‌هال اسپیناس (ابعاد واقعی سایت)</b>
+    <h2 class="sec-t" style="font-size:22px">مشخصات سالن رویال‌هال اسپیناس (ابعاد واقعی سایت)</h2>
     <p style="color:var(--mut);font-size:14px;margin-top:8px">آمفی‌تئاتر ۲۰۳۵ متری · طول ۵۵ × عرض ۳۷ × ارتفاع ۱۶ متر · چیدمان سینمایی ۲۵۵۷ صندلی در ۷ جایگاه (همکف، بالکن اول، بالکن دوم، VIP شرقی/غربی، بالکن شرقی/غربی) · نقشه بالا نسخه نمایشی ۲۴۲۴ صندلی با همان شماره‌گذاری واقعی است (ردیف ۱ نزدیک سن، شماره صندلی از سمت راست) · کاربرد: کنسرت، تئاتر، اجرا و همایش. نقشه سه‌بعدی بالا با همین ابعاد ساخته شده و کف همکف شیب‌دار (آمفی) است تا از دید خواننده هیچ صندلی پشت سر هم گم نشود. رزرو تلفنی سالن: <bdi>02175675</bdi></p>
   </div>
 
   <div class="card reveal" id="faq" style="margin-top:22px">
-    <b>سوالات پرتکرار</b>
-    <p style="color:var(--mut);font-size:14px;margin-top:8px">فاصله‌ها واقعی‌اند؟ بله — هر صندلی با مختصات متری سالن محاسبه می‌شود، نه حدسی. · اگر صندلی‌ام را دوست نداشتم؟ تا ۲۴ ساعت قبل بدون جریمه جابه‌جا می‌شود. · کودکان؟ زیر ۶ سال روی پای والدین رایگان.</p>
+    <h2 class="sec-t" style="font-size:22px">سوالات پرتکرار</h2>
+    <details class="faq" open><summary>فاصله‌ها واقعی‌اند؟</summary><p>بله — هر صندلی با مختصات متری سالن (۵۵×۳۷×۱۶) محاسبه می‌شود، نه حدسی.</p></details>
+    <details class="faq"><summary>اگر صندلی‌ام را دوست نداشتم؟</summary><p>تا ۲۴ ساعت قبل از اجرا بدون جریمه جابه‌جا می‌شود.</p></details>
+    <details class="faq"><summary>کودکان هم بلیت می‌خواهند؟</summary><p>زیر ۶ سال روی پای والدین رایگان است.</p></details>
+    <details class="faq"><summary>پارکینگ کجاست؟</summary><p>پارکینگ طبقاتی هتل اسپیناس پالاس (سعادت‌آباد) با خدمات پارکبان.</p></details>
+    <details class="faq"><summary>رزرو تلفنی هم دارید؟</summary><p>بله: <bdi>02175675</bdi></p></details>
   </div>
 </main>
 
 <button class="fab" id="fab">رفتن به انتخاب صندلی ↓</button>
-<footer>NavaBeat · نسخه نمایشی قدم ۱ (طراحی‌شده با قوانین UI-UX Pro Max) · SESSION-2026-09-25-A · بکاپ v2</footer>
+<footer>NavaBeat · نسخه نمایشی قدم ۱</footer>
 
 <script src="libs/three.min.js"></script>
 <script>
@@ -429,7 +467,7 @@ const mic=new THREE.Mesh(new THREE.SphereGeometry(0.09,12,10),new THREE.MeshStan
 singer.position.set(0,1.6,-4);scene.add(singer);
 const HEAD=new THREE.Vector3(0,3.55,-4);
 // ---- 3D seats: ONE InstancedMesh built from window.SEATS ----
-const seatGeo=new THREE.BoxGeometry(0.55,0.9,0.55);
+const seatGeo=new THREE.BoxGeometry(0.48,0.9,0.6);
 const seatMat=new THREE.MeshStandardMaterial({roughness:0.55});
 const inst=new THREE.InstancedMesh(seatGeo,seatMat,SEATS.length);
 {const M=new THREE.Matrix4(),C=new THREE.Color();
@@ -437,7 +475,7 @@ const inst=new THREE.InstancedMesh(seatGeo,seatMat,SEATS.length);
  inst.instanceMatrix.needsUpdate=true;if(inst.instanceColor)inst.instanceColor.needsUpdate=true;}
 scene.add(inst);
 // balcony decks + railings (balc1 center z≈41, balc2 center z≈48.5)
-[[41,7.75,30,39.2],[48.5,11.25,30,46.7]].forEach(([dz,ty,w,rz])=>{
+[[41,7.75,28,39.2],[48.5,11.25,28,46.7]].forEach(([dz,ty,w,rz])=>{
  const deck=new THREE.Mesh(new THREE.BoxGeometry(w,0.5,12),new THREE.MeshStandardMaterial({color:0x101018,roughness:0.9}));
  deck.position.set(0,ty-0.25,dz);scene.add(deck);
  const rail=new THREE.Mesh(new THREE.BoxGeometry(w,1.1,0.5),new THREE.MeshStandardMaterial({color:0x23233a,roughness:0.6,emissive:0xea580c,emissiveIntensity:0.25}));
@@ -457,9 +495,7 @@ rMain.setPixelRatio(Math.min(devicePixelRatio,2));rPrev.setPixelRatio(Math.min(d
 const cam=new THREE.PerspectiveCamera(60,1,0.1,300);
 let yaw=0,pitch=-0.03,fov=60;const tgt=new THREE.Vector3();
 const seatCam=new THREE.PerspectiveCamera(50,1.6,0.1,300);
-seatCam.layers.enable(1);
 let cur={x:0,y:3,z:16},to=null,t=1;
-const seatOfR=rec=>({x:rec.x,y:2.0+rec.y,z:rec.z});
 if(window.__lastRec){const lr=window.__lastRec;cur={x:lr.x,y:2.0+lr.y,z:lr.z};}
 window.__seatCamToIdx=(i)=>{const rec=SEATS[i];if(!rec)return;to={x:rec.x,y:2.0+rec.y,z:rec.z};t=0;
  seatCam.fov=rec.dist<10?55:(rec.dist<25?48:42);seatCam.updateProjectionMatrix();
@@ -545,6 +581,9 @@ frame();
 </script>
 <script>
 const fa=n=>Number(n).toLocaleString('fa-IR');
+window.concert={name:'',time:'',rate:1};
+const RATE=()=> (window.concert&&window.concert.rate)||1;
+const finalP=p=>Math.round(p*RATE()/10000)*10000;
 const sections=[
  {name:'VIP جلو',en:'VIP',cls:'vip',kind:'hf',rows:[{r:0,n:50},{r:1,n:54},{r:2,n:54},{r:3,n:54}],baseY:4,price:2800000,color:'#3a3a46'},
  {name:'طلایی',en:'GOLD',cls:'gold',kind:'hf',rows:Array.from({length:12},(_,k)=>({r:4+k,n:54})),baseY:8,price:1800000,color:'#3a3a46'},
@@ -557,7 +596,7 @@ const sections=[
  {name:'بالکن غربی',en:'BALCONY WEST',cls:'balc',kind:'side',side:'W',rows:[{r:1,n:23},{r:2,n:15}],baseY:26,yBase:20,tier:4.5,price:550000,color:'#3a3a46'},
 ];
 // lateral positions for a 54-seat row in 8 groups [7,7,7,7,7,7,6,6]
-const HF_XS=(()=>{const G=[7,7,7,7,7,7,6,6],SP=0.6,AISLE=0.55,a=[];let x=-(54*SP+7*AISLE)/2,g=0,left=G[0];
+const HF_XS=(()=>{const G=[7,7,7,7,7,7,6,6],SP=0.52,AISLE=0.45,a=[];let x=-(54*SP+7*AISLE)/2,g=0,left=G[0];
  for(let i=0;i<54;i++){a.push(+(x+SP/2).toFixed(3));x+=SP;if(--left===0&&g<7){x+=AISLE;g++;left=G[g];}}return a;})();
 const SEATS=[];let sel=null;const leftPer={};let leftTotal=0;window.SEATS=SEATS;
 sections.forEach((s,si)=>{
@@ -566,8 +605,8 @@ sections.forEach((s,si)=>{
   for(let j=1;j<=n;j++){
    let x,depth,y,num;
    if(s.kind==='hf'){const off=Math.floor((54-n)/2),idx=off+j-1;x=HF_XS[idx];num=n-(j-1);depth=4+r;y=r*0.22;}
-   else if(s.kind==='rect'){const idx=j-1;x=+((idx-(n-1)/2)*0.62).toFixed(3);num=n-idx;depth=(si===3?37:45)+r;y=(si===3?8:11.5)+(r-1)*0.15;}
-   else{const dir=s.side==='E'?1:-1;x=dir*(15.5+(r-1)*1.1);num=j;depth=s.yBase+(j-1)*0.75;y=s.tier;}
+   else if(s.kind==='rect'){const idx=j-1;x=+((idx-(n-1)/2)*0.54).toFixed(3);num=n-idx;depth=(si===3?37:45)+r;y=(si===3?8:11.5)+(r-1)*0.15;}
+   else{const dir=s.side==='E'?1:-1;x=dir*(17.6+(r-1)*1.0);num=j;depth=s.yBase+(j-1)*0.75;y=s.tier+(j-1)*(s.tier>0?0.28:0.15);}
    const dist=Math.sqrt(x*x+depth*depth),ang=Math.round(Math.atan2(Math.abs(x),depth)*180/Math.PI);
    const sold=((SEATS.length*2654435761)%100)<18;
    if(!sold)left++;
@@ -594,20 +633,20 @@ function pickRec(rec){
  const vw=d<12?['فوق‌العاده نزدیک','ok']:d<25?['واضح و کامل','ok']:d<38?['نمای کامل استیج','mid']:['پانورامای کل سالن','low'];
  document.getElementById('pSnd').innerHTML=`<span class="pill ${snd[1]}">${snd[0]}</span>`;
  document.getElementById('pView').innerHTML=`<span class="pill ${vw[1]}">${vw[0]}</span>`;
-  document.getElementById('pPrice').textContent=fa(rec.price)+' تومان';
-  document.getElementById('buySum').textContent=`${s.name} · ${rowLbl} صندلی ${fa(rec.num)} · ${d.toLocaleString('fa-IR')} متر · ${fa(rec.price)} تومان`;
+  document.getElementById('pPrice').textContent=fa(finalP(rec.price))+' تومان';
+  document.getElementById('buySum').textContent=`${s.name} · ${rowLbl} صندلی ${fa(rec.num)} · ${d.toLocaleString('fa-IR')} متر · ${fa(finalP(rec.price))} تومان`;
   document.getElementById('pHint').textContent=`متراژ دقیق: ${d.toLocaleString('fa-IR')} متر با خواننده فاصله داری (حدود ${fa(Math.round(d*1.35))} قدم). قد خواننده ۱۸۰ سانتی‌متر از اینجا ${d>30?'کوچک ولی با کل نورپردازی سالن دیده می‌شود':'بزرگ و کاملاً واضح دیده می‌شود'}.`;
   document.getElementById('pvTag').textContent=`${s.name} · صندلی ${fa(rec.num)} · نمای زنده`;
   document.getElementById('pvDist').textContent=`${d.toLocaleString('fa-IR')} متر`;
   document.getElementById('pvAng').textContent=rec.ang===0?'روبه‌رو':`${fa(rec.ang)} درجه`;
   window.__lastRec=rec;
+  try{localStorage.setItem('navabeat-seat',String(rec.i))}catch(e){}
   pickTab(rec.si);
   if(window.__seatCamToIdx)window.__seatCamToIdx(rec.i);
 }
 window.pickRec=pickRec;
-function si_of(s){return sections.indexOf(s)}
-window.selectSeat=(si,r,num)=>{const rec=SEATS.find(q=>q.si===si&&q.r===r&&q.num===num&&!q.sold);if(rec)pickRec(rec);};
 function pickTab(si,el){
+ window.__zone=si;
  document.querySelectorAll('#zoneMap .zone').forEach(z=>z.classList.remove('on'));
  if(el&&el.classList&&el.classList.contains('zone'))el.classList.add('on');
  else{const m=document.querySelector(`#zoneMap .zone[data-si="${si}"][data-main="1"]`);if(m)m.classList.add('on');}
@@ -620,7 +659,7 @@ function selectFirst(si){
 function renderZone(si){
  const box=document.getElementById('zoneSeats');if(!box)return;const s=sections[si];
  const gapAfter=s.kind==='hf'?[7,14,21,28,35,42,48]:null;
- let h=`<h4>${s.name} · از ${fa(s.baseY)} متری · از ${fa(s.price)} تومان · ردیف ۱ نزدیک سن، شماره از راست</h4>`;
+ let h=`<h4>${s.name} · از ${fa(s.baseY)} متری · از ${fa(finalP(s.price))} تومان · ردیف ۱ نزدیک سن، شماره از راست</h4>`;
  const byRow={};
  SEATS.forEach(rec=>{if(rec.si!==si)return;(byRow[rec.r]=byRow[rec.r]||[]).push(rec);});
  Object.keys(byRow).map(Number).sort((a,b)=>a-b).forEach(r=>{
@@ -646,7 +685,8 @@ function renderZone(si){
   z.addEventListener('click',()=>{selectFirst(+z.dataset.si);pickTab(+z.dataset.si,z);});
   z.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectFirst(+z.dataset.si);pickTab(+z.dataset.si,z);}});
  });
- sections.forEach((s,si)=>{const el=document.getElementById('zc'+si);if(el)el.textContent=fa(leftPer[si])+' خالی';});
+ sections.forEach((s,si)=>{const el=document.getElementById('zc'+si);if(el)el.textContent=fa(leftPer[si])+' خالی';
+  document.querySelectorAll(`#zoneMap .zone[data-si="${si}"]`).forEach(z=>z.setAttribute('aria-label',z.getAttribute('aria-label').split(' · ')[0]+` · ${fa(leftPer[si])} صندلی خالی`));});
  pickTab(1);
 })();
 document.getElementById('buyBtn').addEventListener('click',()=>{
@@ -656,16 +696,62 @@ document.getElementById('buyBtn').addEventListener('click',()=>{
 function hop(d){const all=SEATS.filter(q=>!q.sold);if(!all.length)return;let k=all.findIndex(q=>sel&&q.i===sel.i);k=(k+d+all.length)%all.length;pickRec(all[k]);}
 document.getElementById('seatPrev').addEventListener('click',()=>hop(-1));
 document.getElementById('seatNext').addEventListener('click',()=>hop(1));
-(function(){const all=SEATS.filter(q=>q.si===1&&!q.sold);if(all.length)pickRec(all[Math.floor(all.length/2)]);})();
+(function(){
+ try{
+  const sv=localStorage.getItem('navabeat-seat');
+  if(sv){const rec=SEATS[+sv];if(rec&&!rec.sold)pickRec(rec);}
+ }catch(e){}
+})();
+// ---- artists lineup + showtime modal ----
+const ARTISTS=[
+ ['شادمهر عقیلی','shadmehr-aghili','پاپ',280,1.6],['محسن یگانه','mohsen-yeganeh','پاپ',265,1.5],
+ ['احسان خواجه‌امیری','ehsan-khajehamiri','پاپ',250,1.4],['علی یاسینی','ali-yasini','پاپ',240,1.35],
+ ['ماکان بند','macan-band','گروه',250,1.4],['بهنام بانی','behnam-bani','پاپ',260,1.5],
+ ['رضا بهرام','reza-bahram','پاپ',240,1.35],['آرش و مسیح','arash-masih','پاپ',230,1.3],
+ ['حامد همایون','hamed-homayoun','پاپ',220,1.25],['فرزاد فرزین','farzad-farzin','پاپ',250,1.4],
+ ['بابک جهانبخش','babak-jahanbakhsh','پاپ',230,1.3],['محسن چاوشی','mohsen-chavoshi','پاپ',290,1.7],
+ ['همایون شجریان','homayoun-shajarian','سنتی',300,1.8],['علیرضا قربانی','alireza-ghorbani','سنتی',290,1.7],
+ ['سالار عقیلی','salar-aghili','سنتی',270,1.55],['رضا صادقی','reza-sadeghi','پاپ',220,1.25],
+ ['حمید هیراد','hamid-hirad','پاپ',210,1.2],['شهاب مظفری','shahab-mozaffari','پاپ',200,1.15],
+ ['مهدی احمدوند','mehdi-ahmadvand','پاپ',190,1.1],['علی لهراسبی','ali-lohrasbi','پاپ',190,1.1],
+ ['امیرعباس گلاب','amirabbas-golab','پاپ',180,1.05],['گرشا رضایی','garsha-rezaei','پاپ',200,1.15],
+ ['سینا درخشنده','sina-derakhshande','پاپ',180,1.05],['مسعود صادقلو','masoud-sadeghloo','پاپ',190,1.1],
+ ['اشوان','ashvan','پاپ',200,1.15],['ایوان بند','evan-band','گروه',210,1.2],
+ ['پازل بند','puzzle-band','گروه',180,1.05],['هوروش بند','horosh-band','گروه',200,1.15],
+ ['علیرضا طلیسچی','alireza-talischi','پاپ',220,1.25],['مجید رضوی','majid-razavi','پاپ',170,1.0],
+].map(([name,slug,gen,fp,rate],k)=>({name,slug,gen,from:fp*10000,rate,hue:(k*47)%360}));
+(function buildArts(){
+ const g=document.getElementById('artsGrid');if(!g)return;
+ g.innerHTML=ARTISTS.map((a,k)=>`<div class="acard"><div class="cover" style="--h:${a.hue}"><span class="cname">${a.name}</span><span class="cgen">${a.gen}</span><img class="real" src="covers/${a.slug}.jpg" alt="${a.name}" loading="lazy" onerror="this.remove()"></div><div class="ainfo"><b>${a.name}</b><small>از ${fa(a.from)} تومان</small></div><button class="btn btn-accent abuy" data-i="${k}">خرید بلیط</button></div>`).join('');
+ g.addEventListener('click',e=>{const b=e.target.closest('.abuy');if(!b)return;openModal(+b.dataset.i);});
+})();
+let modalArtist=0;
+function openModal(k){modalArtist=k;document.getElementById('mName').textContent=ARTISTS[k].name;const m=document.getElementById('movl');m.classList.add('show');m.setAttribute('aria-hidden','false');}
+function closeModal(){const m=document.getElementById('movl');m.classList.remove('show');m.setAttribute('aria-hidden','true');}
+document.getElementById('mx').addEventListener('click',closeModal);
+document.getElementById('movl').addEventListener('click',e=>{if(e.target.id==='movl')closeModal();});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.querySelectorAll('.mtime').forEach(b=>b.addEventListener('click',()=>{
+ const a=ARTISTS[modalArtist];
+ window.concert={name:a.name,time:b.dataset.t,rate:a.rate};
+ document.getElementById('cSinger').textContent=a.name;
+ document.getElementById('cTime').textContent='سانس '+b.dataset.t;
+ document.getElementById('cbar').style.display='flex';
+ closeModal();
+ renderZone(window.__zone!==undefined?window.__zone:1);
+ document.getElementById('hall').scrollIntoView({behavior:'smooth'});
+}));
+document.getElementById('cChange').addEventListener('click',()=>document.getElementById('artists').scrollIntoView({behavior:'smooth'}));
 // tilt slider temporarily disabled (v18) — uncomment to re-enable
-// const tilt=document.getElementById('tilt'),hall=document.getElementById('hallIn'),tv=document.getElementById('tiltVal');
-// tilt.addEventListener('input',()=>{hall.style.transform=`rotateX(${tilt.value}deg)`;tv.textContent=tilt.value+'°'});
+// tilt slider removed (was v18) — see backups for the old code
 // countdown → 21 Azar 1405 ≈ 12 Dec 2026 20:00
-const target=new Date('2026-12-12T20:00:00').getTime();
+const target=new Date('2026-12-12T20:00:00+03:30').getTime();
 const pad=n=>String(n).padStart(2,'0');
+const fa2=n=>String(n).padStart(2,'0').replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+const elD=document.getElementById('cdD'),elH=document.getElementById('cdH'),elM=document.getElementById('cdM'),elS=document.getElementById('cdS');
 function tick(){
  let t=Math.max(0,target-Date.now());const d=Math.floor(t/864e5),h=Math.floor(t/36e5)%24,m=Math.floor(t/6e4)%60,s=Math.floor(t/1e3)%60;
- cdD.textContent=pad(d);cdH.textContent=pad(h);cdM.textContent=pad(m);cdS.textContent=pad(s);
+ elD.textContent=fa2(d);elH.textContent=fa2(h);elM.textContent=fa2(m);elS.textContent=fa2(s);
 }
 setInterval(tick,1000);tick();
 const fab=document.getElementById('fab'),hallSec=document.getElementById('hall');
